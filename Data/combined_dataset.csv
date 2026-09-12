@@ -1,0 +1,428 @@
+id,text,label,sub_label,source
+C0001,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0002,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0003,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0004,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0005,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0006,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0007,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0008,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0009,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0010,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0011,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0012,"Unauthorized login detected from IP 95.152.249.127, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0013,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.50000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0014,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.100000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0015,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0016,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0017,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0018,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0019,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0020,"Unauthorized login detected from IP 164.138.138.158, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0021,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0022,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0023,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0024,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0025,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0026,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.15000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0027,"Unauthorized login detected from IP 176.28.124.17, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0028,I clicked a link http://fake-support-helpdesk.shop/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0029,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0030,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0031,"Unauthorized login detected from IP 226.97.90.140, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0032,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0033,I clicked a link http://fake-support-helpdesk.online/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0034,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0035,"My email account was hacked, attacker sent password reset link http://account-recovery.xyz/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0036,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.50000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0037,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0038,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0039,"Unauthorized login detected from IP 6.82.67.244, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0040,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0041,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0042,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0043,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.100000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0044,"Unauthorized login detected from IP 120.78.174.134, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0045,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0046,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0047,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0048,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.25000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0049,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0050,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0051,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0052,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0053,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0054,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0055,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0056,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0057,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0058,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0059,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0060,"Received an email with link http://fake-support-helpdesk.info/verify asking to verify my account, after clicking I lost access and Rs.100000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0061,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0062,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0063,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0064,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0065,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.5000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0066,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0067,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0068,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0069,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.25000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0070,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0071,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0072,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0073,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0074,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0075,"Unauthorized login detected from IP 211.15.132.203, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0076,I clicked a link http://fake-support-helpdesk.online/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0077,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0078,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0079,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0080,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.50000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0081,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0082,I clicked a link http://fake-support-helpdesk.info/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0083,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0084,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0085,"Received an email with link http://fake-support-helpdesk.info/verify asking to verify my account, after clicking I lost access and Rs.10000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0086,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0087,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0088,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0089,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.100000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0090,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0091,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.100000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0092,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.15000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0093,I clicked a link http://fake-support-helpdesk.online/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0094,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0095,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.5000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0096,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0097,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0098,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0099,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0100,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.100000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0101,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0102,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0103,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0104,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0105,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0106,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0107,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0108,I clicked a link http://fake-support-helpdesk.xyz/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0109,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0110,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0111,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0112,"Unauthorized login detected from IP 151.18.4.68, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0113,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0114,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0115,"Unauthorized login detected from IP 41.207.176.78, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0116,"My email account was hacked, attacker sent password reset link http://account-recovery.xyz/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0117,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0118,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0119,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0120,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0121,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0122,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0123,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0124,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.50000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0125,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0126,"Unauthorized login detected from IP 183.250.148.161, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0127,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0128,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.100000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0129,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.25000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0130,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.5000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0131,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.75000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0132,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0133,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0134,I clicked a link http://fake-support-helpdesk.info/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0135,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0136,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0137,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.25000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0138,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0139,"Unauthorized login detected from IP 163.215.178.225, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0140,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0141,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0142,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0143,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0144,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0145,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0146,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.100000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0147,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0148,"Received an email with link http://fake-support-helpdesk.shop/verify asking to verify my account, after clicking I lost access and Rs.75000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0149,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.75000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0150,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0151,"Unauthorized login detected from IP 193.179.171.25, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0152,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0153,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0154,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0155,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0156,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0157,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0158,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0159,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0160,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0161,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0162,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0163,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0164,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0165,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0166,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.5000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0167,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0168,"Unauthorized login detected from IP 96.33.192.200, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0169,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.10000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0170,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0171,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0172,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0173,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0174,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0175,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0176,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0177,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0178,"Unauthorized login detected from IP 199.217.80.84, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0179,"My email account was hacked, attacker sent password reset link http://account-recovery.xyz/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0180,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0181,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0182,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0183,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0184,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0185,"Unauthorized login detected from IP 13.44.237.147, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0186,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0187,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0188,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0189,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0190,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0191,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0192,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0193,"Unauthorized login detected from IP 225.164.66.198, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0194,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0195,I clicked a link http://fake-support-helpdesk.shop/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0196,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.100000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0197,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0198,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0199,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0200,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.100000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0201,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0202,"Unauthorized login detected from IP 230.208.200.72, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0203,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.5000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0204,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0205,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0206,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0207,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0208,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0209,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.10000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0210,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0211,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0212,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0213,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0214,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0215,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0216,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.25000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0217,I clicked a link http://fake-support-helpdesk.shop/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0218,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0219,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0220,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.25000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0221,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0222,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0223,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0224,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0225,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0226,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0227,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0228,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0229,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0230,I clicked a link http://fake-support-helpdesk.shop/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0231,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.75000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0232,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0233,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0234,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0235,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0236,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.25000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0237,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0238,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0239,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0240,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0241,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0242,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0243,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.75000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0244,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0245,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.25000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0246,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.5000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0247,"Received an email with link http://fake-support-helpdesk.info/verify asking to verify my account, after clicking I lost access and Rs.25000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0248,I clicked a link http://fake-support-helpdesk.xyz/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0249,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.75000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0250,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0251,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0252,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0253,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0254,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0255,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0256,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0257,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0258,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0259,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0260,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0261,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.25000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0262,"Unauthorized login detected from IP 190.67.186.207, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0263,I clicked a link http://fake-support-helpdesk.shop/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0264,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0265,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0266,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0267,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0268,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0269,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0270,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.75000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0271,"Unauthorized login detected from IP 23.72.99.36, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0272,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0273,"Unauthorized login detected from IP 163.237.32.175, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0274,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0275,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0276,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.5000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0277,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.15000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0278,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0279,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0280,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.10000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0281,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0282,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.50000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0283,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0284,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.10000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0285,"Unauthorized login detected from IP 72.115.227.39, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0286,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0287,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0288,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0289,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0290,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.50000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0291,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.100000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0292,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0293,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0294,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0295,"My email account was hacked, attacker sent password reset link http://account-recovery.xyz/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0296,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.5000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0297,"Unauthorized login detected from IP 160.156.180.36, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0298,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0299,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0300,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.25000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0301,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.100000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0302,I clicked a link http://fake-support-helpdesk.xyz/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0303,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.5000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0304,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0305,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.25000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0306,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0307,"Unauthorized login detected from IP 42.215.229.67, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0308,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0309,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0310,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0311,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0312,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0313,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0314,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0315,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0316,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0317,I clicked a link http://fake-support-helpdesk.xyz/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0318,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0319,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0320,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.5000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0321,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.100000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0322,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0323,"Unauthorized login detected from IP 202.180.160.151, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0324,"Unauthorized login detected from IP 99.2.10.137, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0325,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0326,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0327,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0328,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0329,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0330,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0331,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0332,I clicked a link http://fake-support-helpdesk.info/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0333,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0334,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.10000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0335,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0336,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0337,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0338,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0339,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0340,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0341,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.75000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0342,"Received an email with link http://fake-support-helpdesk.info/verify asking to verify my account, after clicking I lost access and Rs.5000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0343,"Unauthorized login detected from IP 88.184.46.236, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0344,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0345,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0346,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0347,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0348,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0349,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0350,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.50000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0351,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0352,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0353,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0354,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0355,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0356,"Received an email with link http://fake-support-helpdesk.online/verify asking to verify my account, after clicking I lost access and Rs.5000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0357,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0358,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0359,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.75000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0360,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0361,I clicked a link http://fake-support-helpdesk.xyz/verify sent via SMS claiming to be customer support and entered my card details. Money was stolen.,Phishing,Fake Support Link,synthetic
+C0362,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0363,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0364,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.10000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0365,"I received a video call from +91-8485793320 and was later blackmailed with a recorded video, asked to pay to pay266@paytm.",Sextortion,Blackmail via Video Call,synthetic
+C0366,"Unauthorized login detected from IP 23.230.26.36, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0367,"A fake support website http://fake-support-helpdesk.info/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0368,"A fake support website http://fake-support-helpdesk.online/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0369,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0370,"Received an email with link http://fake-support-helpdesk.info/verify asking to verify my account, after clicking I lost access and Rs.15000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0371,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0372,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0373,"My identity was used to open a fraud account, contact number linked was +91-7509438221.",Identity Theft,Social Media Impersonation,synthetic
+C0374,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0375,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0376,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0377,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0378,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.25000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0379,"My email account was hacked, attacker sent password reset link http://account-recovery.online/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0380,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0381,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0382,"My email account was hacked, attacker sent password reset link http://account-recovery.shop/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0383,"Received threat messages from hacked account, attacker demanded money to pay949@paytm to restore access.",Hacking,Email/Account Compromise,synthetic
+C0384,"Extortion attempt via WhatsApp from +91-8485793320, demanding payment to bank account.",Sextortion,Blackmail via Video Call,synthetic
+C0385,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0386,"Unauthorized login detected from IP 212.20.147.96, my account was compromised and used for further scams.",Hacking,Email/Account Compromise,synthetic
+C0387,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0388,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.15000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0389,"Someone posing as a bank employee called from +91-9095224592, asked for OTP for 'KYC update', money got deducted from my account.",Financial Fraud,KYC/Bank Impersonation,synthetic
+C0390,"My email account was hacked, attacker sent password reset link http://account-recovery.xyz/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0391,I received a call from +91-9095224592 claiming to be from my bank asking me to update my KYC. They asked for OTP and my account was debited.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0392,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.15000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+C0393,A person called from +91-9095224592 saying my bank account will be blocked unless I verify KYC. Transferred Rs.15000 via UPI to scammer859@paytm on their instruction.,Financial Fraud,KYC/Bank Impersonation,synthetic
+C0394,"A fake support website http://fake-support-helpdesk.shop/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0395,Someone created a fake profile using my photos and contacted my friends asking for money via pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0396,A cloned social media account impersonating me asked my relatives to send money to pay204@ybl.,Identity Theft,Social Media Impersonation,synthetic
+C0397,"My email account was hacked, attacker sent password reset link http://account-recovery.info/verify to change my credentials.",Hacking,Email/Account Compromise,synthetic
+C0398,"A fake support website http://fake-support-helpdesk.xyz/verify asked for my login credentials, my wallet linked to scammer674@okaxis was compromised.",Phishing,Fake Support Link,synthetic
+C0399,"Received an email with link http://fake-support-helpdesk.xyz/verify asking to verify my account, after clicking I lost access and Rs.15000 was withdrawn.",Phishing,Fake Support Link,synthetic
+C0400,Unknown number +91-8485793320 is threatening to leak my private photos unless I pay Rs.100000 to pay266@paytm.,Sextortion,Blackmail via Video Call,synthetic
+R0001,CONGRATULATIONS! FREE 2GB data is yours! Claim on Airtel Thanks App Now. Hurry i.airtel.in/e/csl_ml_2GB,Phishing,General Scam Message,real
+R0002,"Hi! Thank you for being with Vi-India's FASTEST 4G, Ookla-verified. We'd love to improve ourselves! Click http://bit.ly/3uU8D31 to share your feedback.",Phishing,Malicious Link,real
+R0003,"As part of Cyber Swachhta Pakhwada, CERT-In GoI advises you to keep your digital devices bot free. Get bot removal tool at https://www.csk.gov.in",Phishing,Malicious Link,real
+R0004,Study from Home with Vi!! Watch Kite Victers Channel FREE on your Mobile with Vi . Download Vi Movies and TV app now . Click bit.ly/Vi-kite2,Phishing,Malicious Link,real
+R0005,"Hi, [1] new Home Loan offer for you | Rates start as low as 6.75% | EMIs from Rs. 649/lakh. Apply now. TnC apply bnkbzr.co/o68urxqDiB",Financial Fraud,Loan/Credit Card Scam,real
+R0006,"The summer heat is here ! Get your AC, Air Cooler or Fridge now and pay later at no cost using Federal Bank Debit Card EMI ! Click https://fdrl.in/t/dPmgHO for the latest offers -Federal Bank",Phishing,Malicious Link,real
+R0007,Don't let security concerns ruin your travel plans! Get Airtel Xsafe- Wi-Fi enabled surveillance solution that sends real time alerts. Order now and get FREE installation i.airtel.in/PreEye,Phishing,General Scam Message,real
+R0008,"Rs299 recharged! Enjoy Unlimited Calls+4GB/Day+100SMS/Day. Valid for 28 Days.Your 1 yr ZEE5 Premium subscription credited! To activate, click bit.ly/ViZee5Offer",Phishing,Malicious Link,real
+R0009,You're just 1 step away from FREE router! Get Airtel Xstream Fiber & enjoy up to 1 Gbps speeds on all your devices! Plans starting at just Rs 499! i.airtel.in/Exclusiveoffer,Phishing,General Scam Message,real
+R0010,This diwali let's do big savings. Get 75% off on salary withdrawals upto Rs3000. Offer valid 25th Oct-13th Nov. Sign up now weurl.co/wiroNb Team Refyne,Phishing,General Scam Message,real
+R0011,"Dear Customer, Exclusive Offer! Get 5% Unlimited Cashback with Flipkart Axis Bank Credit Card. Apply now for a Rs.1000* Gift Card> http://fkrt.it/Y4frc9NNNN",Financial Fraud,Loan/Credit Card Scam,real
+R0012,"Congrats , It's confirmed! Get Cash Loan up to Rs.50,000 at Truebalance. No paperwork, quick approval! Click - http://1kx.in/kA9HAQ - Credit Cardon",Financial Fraud,Loan/Credit Card Scam,real
+R0013,"Congrats 99467696XX, Your Credit Card Of Limit Rs 500000 Is Ready for Pre-approval.T&C Apply, Click here : http://1kx.in/jdrQUy",Financial Fraud,Loan/Credit Card Scam,real
+R0014,OTP is 513485 and is valid for 10 minutes. Aadhaar enrollment and Mandatory biometric updates are free.Pay only Rs.50 for other updation,Financial Fraud,KYC/OTP/Aadhaar Scam,real
+R0015,"Your A/c can be credited with Rs.3,99,999* Instant transfer..! Secure and hassle-free Loan. Apply now: a0n.in/s/jBq0k3F8ud T&C*",Financial Fraud,Loan/Credit Card Scam,real
+R0016,"Order of Online, your product ,AWB:23409913772622 is picked.Download ack.:https://tiny.xbees.in/zvH8q5xU ,For feedback click fb.xbees.in/eaf2e66i Xpressbees",Phishing,Malicious Link,real
+R0017,"Dear Digi Yatri, Your OTP for Digi Yatra App is 779357 Have a seamless and health-risk-free journey. Thanks, Digi Yatra Foundation 6q3sJ5ApRx2",Financial Fraud,KYC/OTP/Aadhaar Scam,real
+R0018,"Verify the credentials of unknown callers, investment portals offering high returns and requests for urgent help for money received through Social Media. -RBI",Phishing,General Scam Message,real
+R0019,"Do not click on unknown links offering cashback, attractive returns, quick loans, job offers or requests for money. -RBI",Employment Scam,Fake Job Offer,real
+R0020,Beware of fake calls claiming that your registered mobile number will be blocked. To check/report mobile numbers in your name visit https://sancharsaathi.gov.in - Dept of Telecom,Phishing,Malicious Link,real
+R0021,UIDAI recommends updating Proof of Identity & Address documents in your Aadhaar (free at myaadhaar.uidai.gov.in or @ Rs 50/- at any Aadhaar Centre) -UIDAI,Financial Fraud,KYC/OTP/Aadhaar Scam,real
+R0022,"Dear Customer, Thank you for the transaction done today at SBI 70555 branch. Plz click on the given link to share your experience. https://crcf.sbi.co.in/ccf/home/GetFeedback?TxnDate=041023&TxnType=001060&JNo=20254308824. The feedback may be provided before 8 am tomorrow. No Personal Information would be captured. SBI",Phishing,Malicious Link,real
+R0023,"Dear we can offer you to work online & earn 8000-20000/day according to your performance, no time limit, contact: https://wa.me/919678462191 BBKUMR",Employment Scam,Fake Job Offer,real
+R0024,Do not click on suspicious link or download App which promises fake part /full time jobs.,Employment Scam,Fake Job Offer,real
+R0025,"Dear Amazon urgently recruiting for part-time jobs, you can earn 1000-3000Rs every day ,Click here to get yours: wa.me/918858599810 LFPL",Employment Scam,Fake Job Offer,real
+R0026,<#> 1347 is your OTP to login into Airtel Thanks app. OTP valid for 15 mins. Do not share with anyone. If this was not you click i.airtel.in/Contact N9BWuqauU1y,Financial Fraud,KYC/OTP/Aadhaar Scam,real
+R0027,"Dear Customer, avail the most rewarding Savings Account with YES BANK & also get offers on lockers, demat and loans. Know more: http://yesbnk.in/y8Itm5",Financial Fraud,Loan/Credit Card Scam,real
