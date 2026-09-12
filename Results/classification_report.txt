@@ -1,0 +1,32 @@
+CASEINTEL — AI CLASSIFICATION REPORT
+====================================
+
+Dataset: combined_dataset.csv
+Text column: text
+Label column: label
+Total samples used: 427
+Training samples: 341
+Testing samples: 86
+Number of classes: 6
+Model: Logistic Regression
+Feature extraction: TF-IDF
+Train/Test split: 80/20 stratified
+Random state: 42
+
+Accuracy: 0.9651 (96.51%)
+
+Classification Report
+---------------------
+                 precision    recall  f1-score   support
+
+Employment Scam       0.00      0.00      0.00         1
+Financial Fraud       1.00      0.89      0.94        18
+        Hacking       1.00      1.00      1.00        16
+ Identity Theft       1.00      1.00      1.00        16
+       Phishing       0.86      1.00      0.93        19
+     Sextortion       1.00      1.00      1.00        16
+
+       accuracy                           0.97        86
+      macro avg       0.81      0.81      0.81        86
+   weighted avg       0.96      0.97      0.96        86
+
