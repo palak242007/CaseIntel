@@ -24,7 +24,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), "..", "privacy"))
 from pii_protection import redact_text  # reuse Module 1 for redaction
 
 
-def load_data(path="../../data/combined_dataset.csv"):
+def load_data(path="data/combined_dataset.csv"):
     with open(path, encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     texts, labels = [], []
@@ -59,9 +59,9 @@ def train_and_evaluate():
     print(report)
 
     # Save model + vectorizer for reuse in the demo / API
-    os.makedirs("../../data/models", exist_ok=True)
-    joblib.dump(clf, "../../data/models/classifier.joblib")
-    joblib.dump(vectorizer, "../../data/models/vectorizer.joblib")
+    os.makedirs("data/models", exist_ok=True)
+    joblib.dump(clf, "data/models/classifier.joblib")
+    joblib.dump(vectorizer, "data/models/vectorizer.joblib")
     print("\nModel saved -> data/models/classifier.joblib")
 
     return clf, vectorizer
