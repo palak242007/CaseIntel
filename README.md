@@ -17,8 +17,7 @@ CaseIntel is a prototype system that helps cybercrime investigators by automatic
 ## Architecture
 
 ```
-Complaint Input → PII Protection → AI Classification
-                                 → Indicator Extraction → Case Correlation → Investigation Dashboard
+Complaint Input → PII Protection → AI Classification → Indicator Extraction → Case Correlation → Investigation Dashboard
 ```
 
 See `frontend/caseintel_system_architecture.svg` and `frontend/caseintel_data_flow.svg` for diagrams.
@@ -81,16 +80,13 @@ cd ../correlation && python3 correlate.py
 
 | Module | Owner |
 |---|---|
-| PII Protection | *(name)* |
-| AI Classification | *(name)* |
-| Indicator Extraction | *(name)* |
-| Case Correlation | *(name)* |
-| Dashboard & Visualization | *(name)* |
+| PII Protection | Palak |
+| AI Classification | Rishabh |
+| Indicator Extraction | Nancy |
+| Case Correlation | Shreyansh |
+| Dashboard & Visualization | Vishnu |
 
 ## References
 
 See `data/references.md`.
 
-## Status
-
-Prototype built for Review-2 (Project Exhibition I). Next steps: transformer-based classification, FastAPI backend with persistence, expanded real dataset coverage — see `data/review2_slide_content.md` for the full roadmap.
