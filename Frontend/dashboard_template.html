@@ -1,0 +1,1926 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>CaseIntel — Investigation Dashboard</title>
+
+<style>
+    :root {
+        --bg: #f4f7fb;
+        --card: #ffffff;
+        --primary: #1d4ed8;
+        --primary-dark: #1e3a8a;
+        --secondary: #64748b;
+        --text: #172033;
+        --muted: #64748b;
+        --border: #e2e8f0;
+        --success: #15803d;
+        --success-bg: #dcfce7;
+        --warning: #b45309;
+        --warning-bg: #fef3c7;
+        --danger: #b91c1c;
+        --danger-bg: #fee2e2;
+        --info-bg: #dbeafe;
+        --shadow: 0 8px 24px rgba(15, 23, 42, 0.07);
+        --radius: 14px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Inter, Arial, Helvetica, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+    }
+
+    /* ---------- HEADER ---------- */
+
+    header {
+        background: linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+        color: white;
+        padding: 20px 32px;
+        box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    }
+
+    .header-inner {
+        max-width: 1400px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.15);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 22px;
+    }
+
+    .brand h1 {
+        font-size: 23px;
+        font-weight: 700;
+    }
+
+    .brand p {
+        font-size: 12px;
+        opacity: 0.82;
+    }
+
+    .system-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 13px;
+    }
+
+    .status-dot {
+        width: 9px;
+        height: 9px;
+        background: #4ade80;
+        border-radius: 50%;
+        box-shadow: 0 0 0 4px rgba(74, 222, 128, 0.15);
+    }
+
+    /* ---------- MAIN ---------- */
+
+    main {
+        max-width: 1400px;
+        margin: 30px auto;
+        padding: 0 24px 50px;
+    }
+
+    .page-heading {
+        margin-bottom: 22px;
+    }
+
+    .page-heading h2 {
+        font-size: 28px;
+        margin-bottom: 4px;
+    }
+
+    .page-heading p {
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* ---------- SEARCH ---------- */
+
+    .search-panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+        margin-bottom: 24px;
+    }
+
+    .search-panel label {
+        display: block;
+        font-size: 13px;
+        font-weight: 600;
+        margin-bottom: 8px;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-row input,
+    .search-row select {
+        flex: 1;
+        padding: 12px 14px;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        font-size: 14px;
+        outline: none;
+        background: white;
+    }
+
+    .search-row input:focus,
+    .search-row select:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.10);
+    }
+
+    button {
+        border: none;
+        border-radius: 9px;
+        padding: 12px 20px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: 0.2s ease;
+    }
+
+    .btn-primary {
+        background: var(--primary);
+        color: white;
+    }
+
+    .btn-primary:hover {
+        background: var(--primary-dark);
+    }
+
+    .btn-secondary {
+        background: #e2e8f0;
+        color: #334155;
+    }
+
+    .btn-secondary:hover {
+        background: #cbd5e1;
+    }
+
+    /* ---------- STAT CARDS ---------- */
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+        margin-bottom: 24px;
+    }
+
+    .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        box-shadow: var(--shadow);
+    }
+
+    .stat-card .label {
+        color: var(--muted);
+        font-size: 13px;
+        margin-bottom: 8px;
+    }
+
+    .stat-card .value {
+        font-size: 30px;
+        font-weight: 750;
+    }
+
+    .stat-card .description {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    /* ---------- DASHBOARD GRID ---------- */
+
+    .dashboard-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        padding: 22px;
+    }
+
+    .card.full {
+        grid-column: 1 / -1;
+    }
+
+    .card-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 18px;
+    }
+
+    .card-header h3 {
+        font-size: 17px;
+    }
+
+    .card-header span {
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    /* ---------- CASE INFORMATION ---------- */
+
+    .case-id {
+        display: inline-flex;
+        background: var(--info-bg);
+        color: var(--primary-dark);
+        padding: 6px 10px;
+        border-radius: 7px;
+        font-size: 12px;
+        font-weight: 700;
+        margin-bottom: 14px;
+    }
+
+    .case-description {
+        background: #f8fafc;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px;
+        color: #475569;
+        font-size: 14px;
+        margin-bottom: 18px;
+    }
+
+    .detail-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .detail-item {
+        padding: 12px;
+        background: #f8fafc;
+        border-radius: 9px;
+    }
+
+    .detail-item .detail-label {
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin-bottom: 3px;
+    }
+
+    .detail-item .detail-value {
+        font-size: 14px;
+        font-weight: 650;
+    }
+
+    /* ---------- CLASSIFICATION ---------- */
+
+    .classification-box {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        padding: 18px;
+        background: #eff6ff;
+        border: 1px solid #bfdbfe;
+        border-radius: 11px;
+    }
+
+    .classification-label {
+        font-size: 11px;
+        color: var(--muted);
+        text-transform: uppercase;
+        margin-bottom: 4px;
+    }
+
+    .classification-value {
+        font-size: 23px;
+        color: var(--primary-dark);
+        font-weight: 750;
+    }
+
+    .confidence {
+        text-align: right;
+    }
+
+    .confidence-value {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .confidence-label {
+        font-size: 11px;
+        color: var(--muted);
+    }
+
+    .progress {
+        width: 100%;
+        height: 7px;
+        background: #dbeafe;
+        border-radius: 99px;
+        overflow: hidden;
+        margin-top: 14px;
+    }
+
+    .progress-bar {
+        height: 100%;
+        background: var(--primary);
+        border-radius: 99px;
+        width: 0%;
+        transition: width 0.5s ease;
+    }
+
+    /* ---------- INDICATORS ---------- */
+
+    .indicator-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .indicator {
+        padding: 9px 12px;
+        background: #f1f5f9;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+    }
+
+    .indicator-type {
+        font-weight: 700;
+        color: var(--primary-dark);
+    }
+
+    .indicator-value {
+        color: #475569;
+    }
+
+    /* ---------- RELATED CASES ---------- */
+
+    .related-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .related-case {
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .related-case:hover {
+        border-color: #93c5fd;
+        background: #f8fbff;
+    }
+
+    .related-case-id {
+        font-weight: 700;
+        color: var(--primary-dark);
+    }
+
+    .related-reason {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+    }
+
+    .similarity {
+        font-size: 12px;
+        font-weight: 700;
+        color: var(--success);
+        background: var(--success-bg);
+        padding: 6px 9px;
+        border-radius: 7px;
+        white-space: nowrap;
+    }
+
+    /* ---------- INVESTIGATION LEAD ---------- */
+
+    .lead-box {
+        border-left: 5px solid var(--warning);
+        background: var(--warning-bg);
+        padding: 18px;
+        border-radius: 9px;
+    }
+
+    .lead-title {
+        color: var(--warning);
+        font-weight: 750;
+        margin-bottom: 5px;
+    }
+
+    .lead-description {
+        font-size: 14px;
+        color: #713f12;
+    }
+
+    .lead-priority {
+        margin-top: 12px;
+        display: inline-block;
+        padding: 5px 9px;
+        background: #f59e0b;
+        color: white;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    /* ---------- TABLE ---------- */
+
+    .table-wrapper {
+        overflow-x: auto;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        font-size: 13px;
+    }
+
+    th {
+        background: #f8fafc;
+        color: var(--muted);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+    }
+
+    tbody tr:hover {
+        background: #f8fbff;
+    }
+
+    .badge {
+        display: inline-block;
+        padding: 5px 8px;
+        border-radius: 6px;
+        font-size: 11px;
+        font-weight: 700;
+    }
+
+    .badge-blue {
+        color: var(--primary-dark);
+        background: var(--info-bg);
+    }
+
+    .badge-green {
+        color: var(--success);
+        background: var(--success-bg);
+    }
+
+    .badge-orange {
+        color: var(--warning);
+        background: var(--warning-bg);
+    }
+
+    /* ---------- EMPTY / ERROR ---------- */
+
+    .empty {
+        text-align: center;
+        padding: 30px 15px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    .error-box {
+        background: var(--danger-bg);
+        color: var(--danger);
+        padding: 15px;
+        border-radius: 9px;
+        margin-bottom: 20px;
+        display: none;
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 24px 30px;
+        color: var(--muted);
+        font-size: 12px;
+        text-align: center;
+    }
+
+    /* ---------- RESPONSIVE ---------- */
+
+    @media (max-width: 1000px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .dashboard-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .card.full {
+            grid-column: auto;
+        }
+    }
+
+    @media (max-width: 650px) {
+        header {
+            padding: 16px 18px;
+        }
+
+        main {
+            margin-top: 20px;
+            padding: 0 15px 35px;
+        }
+
+        .header-inner {
+            align-items: flex-start;
+        }
+
+        .system-status {
+            display: none;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .search-row {
+            flex-direction: column;
+        }
+
+        .detail-list {
+            grid-template-columns: 1fr;
+        }
+
+        .classification-box {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .confidence {
+            text-align: left;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+```
+    <div class="brand">
+        <div class="brand-icon">🔎</div>
+
+        <div>
+            <h1>CaseIntel</h1>
+            <p>AI-Assisted Cybercrime Investigation Dashboard</p>
+        </div>
+    </div>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        System Operational
+    </div>
+
+</div>
+```
+
+</header>
+
+<main>
+
+```
+<section class="page-heading">
+    <h2>Investigation Dashboard</h2>
+    <p>
+        Unified view of case classification, extracted indicators,
+        potential relationships and investigation leads.
+    </p>
+</section>
+
+
+<div id="errorBox" class="error-box"></div>
+
+
+<!-- SEARCH -->
+
+<section class="search-panel">
+
+    <label for="caseSearch">
+        Search Case
+    </label>
+
+    <div class="search-row">
+
+        <input
+            type="text"
+            id="caseSearch"
+            placeholder="Enter Case ID, e.g. C001"
+        >
+
+        <button
+            class="btn-primary"
+            onclick="searchCase()"
+        >
+            Search
+        </button>
+
+        <button
+            class="btn-secondary"
+            onclick="showFirstCase()"
+        >
+            Show Demo Case
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- STATISTICS -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <div class="label">Total Cases</div>
+        <div class="value" id="totalCases">—</div>
+        <div class="description">
+            Cases available to the system
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="label">Crime Categories</div>
+        <div class="value" id="totalCategories">—</div>
+        <div class="description">
+            Classification categories
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="label">Potential Relationships</div>
+        <div class="value" id="totalRelationships">—</div>
+        <div class="description">
+            Correlation signals detected
+        </div>
+    </div>
+
+    <div class="stat-card">
+        <div class="label">Investigation Leads</div>
+        <div class="value" id="totalLeads">—</div>
+        <div class="description">
+            Cases requiring review
+        </div>
+    </div>
+
+</section>
+
+
+<!-- MAIN DASHBOARD -->
+
+<section class="dashboard-grid">
+
+
+    <!-- CASE INFORMATION -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>Case Information</h3>
+            <span id="caseStatus">—</span>
+        </div>
+
+        <div id="caseInformation">
+            <div class="empty">
+                Select a case to view details.
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- CLASSIFICATION -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>AI Classification</h3>
+            <span>Member 2</span>
+        </div>
+
+        <div id="classification">
+
+            <div class="empty">
+                Classification results will appear here.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INDICATORS -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>Extracted Indicators</h3>
+            <span>Member 3</span>
+        </div>
+
+        <div id="indicators">
+
+            <div class="empty">
+                No indicators available.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RELATED CASES -->
+
+    <div class="card">
+
+        <div class="card-header">
+            <h3>Potentially Related Cases</h3>
+            <span>Member 4</span>
+        </div>
+
+        <div id="relatedCases">
+
+            <div class="empty">
+                No related cases available.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- INVESTIGATION LEAD -->
+
+    <div class="card full">
+
+        <div class="card-header">
+            <h3>Investigation Lead</h3>
+            <span>Correlation Analysis</span>
+        </div>
+
+        <div id="investigationLead">
+
+            <div class="empty">
+                Investigation lead will appear after selecting a case.
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ALL CASES TABLE -->
+
+    <div class="card full">
+
+        <div class="card-header">
+            <h3>Case Overview</h3>
+            <span>All available cases</span>
+        </div>
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Case ID</th>
+                        <th>Category</th>
+                        <th>Indicators</th>
+                        <th>Related Cases</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody id="caseTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</section>
+```
+
+</main>
+
+<footer>
+    CaseIntel &copy; 2026 — AI-assisted investigation support.
+    Results are intended to support investigators and do not replace human verification.
+</footer>
+
+<script>
+
+    /*
+     * ============================================================
+     * CASEINTEL DASHBOARD TEMPLATE
+     * ============================================================
+     *
+     * Expected dashboard_data.json structure:
+     *
+     * {
+     *   "cases": [
+     *     {
+     *       "case_id": "C001",
+     *       "description": "Example complaint...",
+     *       "category": "Phishing",
+     *       "confidence": 0.94,
+     *       "indicators": [
+     *          {
+     *             "type": "Phone",
+     *             "value": "XXXXXXXXXX"
+     *          },
+     *          {
+     *             "type": "URL",
+     *             "value": "example.com"
+     *          }
+     *       ],
+     *       "related_cases": [
+     *          {
+     *             "case_id": "C014",
+     *             "reason": "Shared phone indicator",
+     *             "similarity": 0.82
+     *          }
+     *       ],
+     *       "lead": {
+     *          "title": "Potential relationship detected",
+     *          "description": "Shared indicators suggest manual review.",
+     *          "priority": "MEDIUM"
+     *       },
+     *       "status": "Requires Review"
+     *     }
+     *   ]
+     * }
+     *
+     * ============================================================
+     */
+
+
+    let dashboardData = {
+        cases: []
+    };
+
+
+    /* ------------------------------------------------------------
+       LOAD DATA
+    ------------------------------------------------------------ */
+
+    async function loadDashboardData() {
+
+        try {
+
+            const response = await fetch("../data/dashboard_data.json");
+
+            if (!response.ok) {
+                throw new Error(
+                    "Unable to load dashboard_data.json"
+                );
+            }
+
+            dashboardData = await response.json();
+
+            initializeDashboard();
+
+        } catch (error) {
+
+            console.error(error);
+
+            showError(
+                "Dashboard data could not be loaded. " +
+                "Make sure dashboard_data.json exists and the " +
+                "dashboard is being served through a local web server."
+            );
+
+        }
+
+    }
+
+
+    /* ------------------------------------------------------------
+       INITIALIZE
+    ------------------------------------------------------------ */
+
+    function initializeDashboard() {
+
+        updateStatistics();
+
+        renderCaseTable();
+
+        if (dashboardData.cases.length > 0) {
+
+            displayCase(dashboardData.cases[0]);
+
+        }
+
+    }
+
+
+    /* ------------------------------------------------------------
+       STATISTICS
+    ------------------------------------------------------------ */
+
+    function updateStatistics() {
+
+        const cases = dashboardData.cases || [];
+
+        const totalCases = cases.length;
+
+        const categories = new Set(
+            cases
+                .map(c => c.category)
+                .filter(Boolean)
+        );
+
+        let relationships = 0;
+
+        cases.forEach(caseItem => {
+
+            if (Array.isArray(caseItem.related_cases)) {
+
+                relationships += caseItem.related_cases.length;
+
+            }
+
+        });
+
+
+        const leads = cases.filter(
+            c =>
+                c.lead &&
+                (
+                    c.lead.title ||
+                    c.lead.description
+                )
+        ).length;
+
+
+        document.getElementById("totalCases")
+            .textContent = totalCases;
+
+        document.getElementById("totalCategories")
+            .textContent = categories.size;
+
+        document.getElementById("totalRelationships")
+            .textContent = relationships;
+
+        document.getElementById("totalLeads")
+            .textContent = leads;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       SEARCH CASE
+    ------------------------------------------------------------ */
+
+    function searchCase() {
+
+        const input =
+            document
+                .getElementById("caseSearch")
+                .value
+                .trim()
+                .toLowerCase();
+
+
+        if (!input) {
+
+            showError("Please enter a Case ID.");
+
+            return;
+
+        }
+
+
+        const caseItem =
+            dashboardData.cases.find(
+                c =>
+                    String(c.case_id)
+                        .toLowerCase() === input
+            );
+
+
+        if (!caseItem) {
+
+            showError(
+                "No case found with ID: " + input
+            );
+
+            return;
+
+        }
+
+
+        hideError();
+
+        displayCase(caseItem);
+
+    }
+
+
+    /* ------------------------------------------------------------
+       SHOW FIRST CASE
+    ------------------------------------------------------------ */
+
+    function showFirstCase() {
+
+        hideError();
+
+        if (
+            !dashboardData.cases ||
+            dashboardData.cases.length === 0
+        ) {
+
+            showError("No cases are available.");
+
+            return;
+
+        }
+
+        displayCase(
+            dashboardData.cases[0]
+        );
+
+    }
+
+
+    /* ------------------------------------------------------------
+       DISPLAY CASE
+    ------------------------------------------------------------ */
+
+    function displayCase(caseItem) {
+
+        if (!caseItem) {
+            return;
+        }
+
+        document.getElementById("caseSearch")
+            .value = caseItem.case_id || "";
+
+
+        document.getElementById("caseStatus")
+            .textContent =
+                caseItem.status || "Available";
+
+
+        renderCaseInformation(caseItem);
+
+        renderClassification(caseItem);
+
+        renderIndicators(caseItem);
+
+        renderRelatedCases(caseItem);
+
+        renderInvestigationLead(caseItem);
+
+    }
+
+
+    /* ------------------------------------------------------------
+       CASE INFORMATION
+    ------------------------------------------------------------ */
+
+    function renderCaseInformation(caseItem) {
+
+        const container =
+            document.getElementById(
+                "caseInformation"
+            );
+
+
+        const caseId =
+            escapeHTML(
+                caseItem.case_id || "Unknown"
+            );
+
+
+        const description =
+            escapeHTML(
+                caseItem.description ||
+                "No case description available."
+            );
+
+
+        const date =
+            escapeHTML(
+                caseItem.date ||
+                caseItem.created_at ||
+                "Not available"
+            );
+
+
+        const source =
+            escapeHTML(
+                caseItem.source ||
+                "Complaint dataset"
+            );
+
+
+        container.innerHTML = `
+
+            <div class="case-id">
+                CASE ${caseId}
+            </div>
+
+            <div class="case-description">
+                ${description}
+            </div>
+
+            <div class="detail-list">
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Category
+                    </div>
+
+                    <div class="detail-value">
+                        ${escapeHTML(
+                            caseItem.category ||
+                            "Pending"
+                        )}
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Date
+                    </div>
+
+                    <div class="detail-value">
+                        ${date}
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Source
+                    </div>
+
+                    <div class="detail-value">
+                        ${source}
+                    </div>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <div class="detail-label">
+                        Status
+                    </div>
+
+                    <div class="detail-value">
+                        ${escapeHTML(
+                            caseItem.status ||
+                            "Requires Review"
+                        )}
+                    </div>
+
+                </div>
+
+            </div>
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       CLASSIFICATION
+    ------------------------------------------------------------ */
+
+    function renderClassification(caseItem) {
+
+        const container =
+            document.getElementById(
+                "classification"
+            );
+
+
+        const category =
+            escapeHTML(
+                caseItem.category ||
+                caseItem.predicted_category ||
+                "Unknown"
+            );
+
+
+        let confidence =
+            Number(
+                caseItem.confidence ??
+                caseItem.classification_confidence ??
+                0
+            );
+
+
+        /*
+         * Support both:
+         *
+         * 0.94
+         *
+         * and
+         *
+         * 94
+         */
+
+        if (confidence > 1) {
+            confidence = confidence / 100;
+        }
+
+
+        confidence =
+            Math.max(
+                0,
+                Math.min(
+                    1,
+                    confidence
+                )
+            );
+
+
+        const percentage =
+            Math.round(
+                confidence * 100
+            );
+
+
+        container.innerHTML = `
+
+            <div class="classification-box">
+
+                <div>
+
+                    <div class="classification-label">
+                        Predicted Crime Category
+                    </div>
+
+                    <div class="classification-value">
+                        ${category}
+                    </div>
+
+                </div>
+
+
+                <div class="confidence">
+
+                    <div class="confidence-value">
+                        ${percentage}%
+                    </div>
+
+                    <div class="confidence-label">
+                        Model confidence
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="progress">
+
+                <div
+                    class="progress-bar"
+                    style="width: ${percentage}%"
+                ></div>
+
+            </div>
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       INDICATORS
+    ------------------------------------------------------------ */
+
+    function renderIndicators(caseItem) {
+
+        const container =
+            document.getElementById(
+                "indicators"
+            );
+
+
+        const indicators =
+            caseItem.indicators || [];
+
+
+        if (!Array.isArray(indicators) ||
+            indicators.length === 0) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No indicators were extracted
+                    from this case.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML = `
+
+            <div class="indicator-container">
+
+                ${indicators
+                    .map(
+                        indicator =>
+                            renderIndicator(indicator)
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        `;
+
+    }
+
+
+    function renderIndicator(indicator) {
+
+        /*
+         * Supports:
+         *
+         * {
+         *   "type": "Phone",
+         *   "value": "..."
+         * }
+         *
+         * OR
+         *
+         * {
+         *   "phone": "..."
+         * }
+         */
+
+        if (
+            typeof indicator === "string"
+        ) {
+
+            return `
+
+                <div class="indicator">
+
+                    <span class="indicator-value">
+                        ${escapeHTML(indicator)}
+                    </span>
+
+                </div>
+
+            `;
+
+        }
+
+
+        const type =
+            indicator.type ||
+            indicator.name ||
+            "Indicator";
+
+
+        const value =
+            indicator.value ||
+            indicator.data ||
+            "";
+
+
+        return `
+
+            <div class="indicator">
+
+                <span class="indicator-type">
+                    ${escapeHTML(type)}
+                </span>
+
+                <span class="indicator-value">
+                    ${escapeHTML(value)}
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       RELATED CASES
+    ------------------------------------------------------------ */
+
+    function renderRelatedCases(caseItem) {
+
+        const container =
+            document.getElementById(
+                "relatedCases"
+            );
+
+
+        const related =
+            caseItem.related_cases || [];
+
+
+        if (
+            !Array.isArray(related) ||
+            related.length === 0
+        ) {
+
+            container.innerHTML = `
+                <div class="empty">
+                    No potentially related cases
+                    were detected.
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        container.innerHTML = `
+
+            <div class="related-list">
+
+                ${related
+                    .map(
+                        relatedCase =>
+                            renderRelatedCase(
+                                relatedCase
+                            )
+                    )
+                    .join("")
+                }
+
+            </div>
+
+        `;
+
+    }
+
+
+    function renderRelatedCase(relatedCase) {
+
+        if (
+            typeof relatedCase === "string"
+        ) {
+
+            return `
+
+                <div class="related-case">
+
+                    <div>
+
+                        <div class="related-case-id">
+                            ${escapeHTML(
+                                relatedCase
+                            )}
+                        </div>
+
+                        <div class="related-reason">
+                            Potential relationship
+                            detected
+                        </div>
+
+                    </div>
+
+                </div>
+
+            `;
+
+        }
+
+
+        const caseId =
+            relatedCase.case_id ||
+            relatedCase.id ||
+            "Unknown";
+
+
+        const reason =
+            relatedCase.reason ||
+            relatedCase.shared_indicator ||
+            "Potentially related based on correlation signals";
+
+
+        let similarity =
+            Number(
+                relatedCase.similarity ??
+                relatedCase.score ??
+                0
+            );
+
+
+        if (similarity > 1) {
+            similarity = similarity / 100;
+        }
+
+
+        const hasSimilarity =
+            similarity > 0;
+
+
+        const similarityText =
+            hasSimilarity
+                ? Math.round(similarity * 100) + "%"
+                : "Review";
+
+
+        return `
+
+            <div class="related-case">
+
+                <div>
+
+                    <div class="related-case-id">
+                        ${escapeHTML(caseId)}
+                    </div>
+
+                    <div class="related-reason">
+                        ${escapeHTML(reason)}
+                    </div>
+
+                </div>
+
+
+                <div class="similarity">
+
+                    ${similarityText}
+
+                </div>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       INVESTIGATION LEAD
+    ------------------------------------------------------------ */
+
+    function renderInvestigationLead(caseItem) {
+
+        const container =
+            document.getElementById(
+                "investigationLead"
+            );
+
+
+        const lead =
+            caseItem.lead ||
+            caseItem.investigation_lead;
+
+
+        if (!lead) {
+
+            container.innerHTML = `
+
+                <div class="empty">
+
+                    No investigation lead was
+                    generated for this case.
+
+                </div>
+
+            `;
+
+            return;
+
+        }
+
+
+        const title =
+            lead.title ||
+            "Potential investigation lead";
+
+
+        const description =
+            lead.description ||
+            "Potential relationship detected. Manual verification is recommended.";
+
+
+        const priority =
+            lead.priority ||
+            "REVIEW";
+
+
+        container.innerHTML = `
+
+            <div class="lead-box">
+
+                <div class="lead-title">
+                    ${escapeHTML(title)}
+                </div>
+
+                <div class="lead-description">
+                    ${escapeHTML(description)}
+                </div>
+
+                <span class="lead-priority">
+                    PRIORITY: ${escapeHTML(priority)}
+                </span>
+
+            </div>
+
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       CASE TABLE
+    ------------------------------------------------------------ */
+
+    function renderCaseTable() {
+
+        const tableBody =
+            document.getElementById(
+                "caseTableBody"
+            );
+
+
+        const cases =
+            dashboardData.cases || [];
+
+
+        if (cases.length === 0) {
+
+            tableBody.innerHTML = `
+
+                <tr>
+
+                    <td colspan="5">
+
+                        <div class="empty">
+                            No cases available.
+                        </div>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+            return;
+
+        }
+
+
+        tableBody.innerHTML =
+            cases
+                .map(
+                    caseItem =>
+                        renderCaseRow(
+                            caseItem
+                        )
+                )
+                .join("");
+
+    }
+
+
+    function renderCaseRow(caseItem) {
+
+        const indicators =
+            Array.isArray(
+                caseItem.indicators
+            )
+                ? caseItem.indicators.length
+                : 0;
+
+
+        const related =
+            Array.isArray(
+                caseItem.related_cases
+            )
+                ? caseItem.related_cases.length
+                : 0;
+
+
+        return `
+
+            <tr>
+
+                <td>
+
+                    <strong>
+                        ${escapeHTML(
+                            caseItem.case_id ||
+                            "Unknown"
+                        )}
+                    </strong>
+
+                </td>
+
+
+                <td>
+
+                    <span class="badge badge-blue">
+
+                        ${escapeHTML(
+                            caseItem.category ||
+                            "Unknown"
+                        )}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+                    ${indicators}
+                </td>
+
+
+                <td>
+                    ${related}
+                </td>
+
+
+                <td>
+
+                    <span class="badge badge-orange">
+
+                        ${escapeHTML(
+                            caseItem.status ||
+                            "Review"
+                        )}
+
+                    </span>
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+
+    /* ------------------------------------------------------------
+       ERROR HANDLING
+    ------------------------------------------------------------ */
+
+    function showError(message) {
+
+        const box =
+            document.getElementById(
+                "errorBox"
+            );
+
+
+        box.textContent = message;
+
+        box.style.display = "block";
+
+    }
+
+
+    function hideError() {
+
+        const box =
+            document.getElementById(
+                "errorBox"
+            );
+
+
+        box.textContent = "";
+
+        box.style.display = "none";
+
+    }
+
+
+    /* ------------------------------------------------------------
+       SECURITY
+    ------------------------------------------------------------ */
+
+    function escapeHTML(value) {
+
+        if (
+            value === null ||
+            value === undefined
+        ) {
+
+            return "";
+
+        }
+
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    /* ------------------------------------------------------------
+       KEYBOARD SEARCH
+    ------------------------------------------------------------ */
+
+    document
+        .getElementById("caseSearch")
+        .addEventListener(
+            "keydown",
+            function(event) {
+
+                if (event.key === "Enter") {
+
+                    searchCase();
+
+                }
+
+            }
+        );
+
+
+    /* ------------------------------------------------------------
+       START APPLICATION
+    ------------------------------------------------------------ */
+
+    loadDashboardData();
+
+</script>
+
+</body>
+</html>
