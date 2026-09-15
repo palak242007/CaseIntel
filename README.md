@@ -24,6 +24,7 @@ Complaint Input → PII Protection → AI Classification → Indicator Extractio
 See `frontend/caseintel_system_architecture.svg` and `frontend/caseintel_data_flow.svg` for diagrams.
 
 ## Project structure
+```text
 CaseIntel/
 │
 ├── README.md
@@ -68,6 +69,7 @@ CaseIntel/
 ├── Results/
     ├── classification_report.txt
     └── confusion_matrix.png
+```
 
 ## Setup
 ```bash
@@ -91,20 +93,22 @@ Crime Category
 - Every row is tagged `source: synthetic` or `source: real` in `combined_dataset.csv`
 
 ## Results (current prototype)
+```text
 | Metric | Value |
 | Total complaints processed | 427 |
 | Classification test accuracy | 95% |
 | PII instances redacted | 511 |
 | Indicators extracted | 524 |
 | Correlated case clusters found | 10 |
-
+```
 ## Team
+```text
 | Module | Owner |
 | PII Protection | *Palak* |
 | AI Classification | *Rishabh* |
 | Indicator Extraction | *Nancy* |
 | Case Correlation | *Shreyansh* |
 | Dashboard & Visualization | *Vishnu* |
-
+```
 ## References
 See `data/references.md`.
