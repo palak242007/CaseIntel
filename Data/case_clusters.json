@@ -1,0 +1,286 @@
+{
+  "clusters": [
+    {
+      "cluster_id": "CL001",
+      "case_ids": [
+        "C001",
+        "C014",
+        "C027"
+      ],
+      "relationship_type": "strong",
+      "correlation_score": 0.92,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9876543210"
+        ],
+        "upi_ids": [
+          "fraudster@upi"
+        ],
+        "urls": [
+          "http://fakebank.example"
+        ]
+      },
+      "relationship_reasons": [
+        "Same phone number appears in all three cases",
+        "Same UPI ID appears in all three cases",
+        "Similar phishing complaint pattern"
+      ],
+      "case_summary": "Multiple complaints report fraudulent banking communication involving the same phone number and UPI ID.",
+      "investigation_lead": true,
+      "confidence": "high",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL002",
+      "case_ids": [
+        "C002",
+        "C009"
+      ],
+      "relationship_type": "strong",
+      "correlation_score": 0.86,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9123456780"
+        ],
+        "upi_ids": [],
+        "urls": [
+          "http://kyc-update.example"
+        ]
+      },
+      "relationship_reasons": [
+        "Same phone number appears in both cases",
+        "Same suspicious URL appears in both cases",
+        "Similar KYC-update scam pattern"
+      ],
+      "case_summary": "Two victims received messages directing them to a suspicious KYC update website from the same phone number.",
+      "investigation_lead": true,
+      "confidence": "high",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL003",
+      "case_ids": [
+        "C003",
+        "C018",
+        "C021"
+      ],
+      "relationship_type": "moderate",
+      "correlation_score": 0.74,
+      "shared_indicators": {
+        "phone_numbers": [],
+        "upi_ids": [
+          "paymenthelp@upi"
+        ],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "Same UPI ID appears across multiple complaints",
+        "Complaints contain similar payment-fraud descriptions"
+      ],
+      "case_summary": "Multiple payment-fraud complaints reference the same UPI identifier.",
+      "investigation_lead": true,
+      "confidence": "medium",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL004",
+      "case_ids": [
+        "C004",
+        "C011"
+      ],
+      "relationship_type": "moderate",
+      "correlation_score": 0.69,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9988776655"
+        ],
+        "upi_ids": [],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "Same phone number appears in both cases",
+        "Similar impersonation-fraud complaint pattern"
+      ],
+      "case_summary": "Both complaints describe an impersonation scam involving the same reported phone number.",
+      "investigation_lead": true,
+      "confidence": "medium",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL005",
+      "case_ids": [
+        "C005",
+        "C019"
+      ],
+      "relationship_type": "moderate",
+      "correlation_score": 0.71,
+      "shared_indicators": {
+        "phone_numbers": [],
+        "upi_ids": [],
+        "urls": [
+          "http://reward-prize.example"
+        ]
+      },
+      "relationship_reasons": [
+        "Same suspicious URL appears in both cases",
+        "Similar fake-reward scam wording"
+      ],
+      "case_summary": "Both complaints involve a suspicious reward-related website.",
+      "investigation_lead": true,
+      "confidence": "medium",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL006",
+      "case_ids": [
+        "C006",
+        "C022",
+        "C030"
+      ],
+      "relationship_type": "strong",
+      "correlation_score": 0.89,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9012345678"
+        ],
+        "upi_ids": [
+          "supportdesk@upi"
+        ],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "Same phone number appears across cases",
+        "Same UPI ID appears across cases",
+        "Similar customer-support impersonation pattern"
+      ],
+      "case_summary": "Several victims reported fake customer-support interactions involving the same phone number and UPI ID.",
+      "investigation_lead": true,
+      "confidence": "high",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL007",
+      "case_ids": [
+        "C007",
+        "C016"
+      ],
+      "relationship_type": "weak",
+      "correlation_score": 0.58,
+      "shared_indicators": {
+        "phone_numbers": [],
+        "upi_ids": [],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "High textual similarity between complaint descriptions",
+        "Similar phishing terminology detected"
+      ],
+      "case_summary": "The complaints have similar wording and describe comparable phishing activity, but no strong shared indicator was identified.",
+      "investigation_lead": true,
+      "confidence": "low",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL008",
+      "case_ids": [
+        "C008",
+        "C024"
+      ],
+      "relationship_type": "strong",
+      "correlation_score": 0.84,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9345678123"
+        ],
+        "upi_ids": [],
+        "urls": [
+          "http://loan-offer.example"
+        ]
+      },
+      "relationship_reasons": [
+        "Same phone number appears in both cases",
+        "Same suspicious loan website appears in both cases",
+        "Similar fraudulent-loan pattern"
+      ],
+      "case_summary": "Both complaints describe a fraudulent loan offer involving the same phone number and website.",
+      "investigation_lead": true,
+      "confidence": "high",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL009",
+      "case_ids": [
+        "C010",
+        "C025",
+        "C031"
+      ],
+      "relationship_type": "moderate",
+      "correlation_score": 0.77,
+      "shared_indicators": {
+        "phone_numbers": [],
+        "upi_ids": [
+          "refunddesk@upi"
+        ],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "Same UPI ID appears in multiple refund-related complaints",
+        "Similar refund scam pattern"
+      ],
+      "case_summary": "Multiple complaints report fraudulent refund requests associated with the same UPI identifier.",
+      "investigation_lead": true,
+      "confidence": "medium",
+      "requires_human_verification": true
+    },
+    {
+      "cluster_id": "CL010",
+      "case_ids": [
+        "C012",
+        "C023"
+      ],
+      "relationship_type": "moderate",
+      "correlation_score": 0.72,
+      "shared_indicators": {
+        "phone_numbers": [
+          "9765432109"
+        ],
+        "upi_ids": [],
+        "urls": []
+      },
+      "relationship_reasons": [
+        "Same phone number appears in both complaints",
+        "Similar digital-payment fraud pattern"
+      ],
+      "case_summary": "Both complaints contain the same reported phone number and describe similar digital-payment fraud.",
+      "investigation_lead": true,
+      "confidence": "medium",
+      "requires_human_verification": true
+    }
+  ],
+  "unclustered_cases": [
+    "C013",
+    "C015",
+    "C017",
+    "C020",
+    "C026",
+    "C028",
+    "C029"
+  ],
+  "metadata": {
+    "total_clusters": 10,
+    "total_clustered_cases": 23,
+    "total_unclustered_cases": 7,
+    "correlation_method": [
+      "shared_indicators",
+      "tfidf_cosine_similarity",
+      "connected_component_clustering"
+    ],
+    "indicator_types": [
+      "phone_numbers",
+      "upi_ids",
+      "urls"
+    ],
+    "purpose": "Identify potentially related cybercrime cases and generate investigation leads for human verification.",
+    "generated_by": "CaseIntel Correlation Module"
+  }
+}
