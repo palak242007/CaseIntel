@@ -1,8 +1,9 @@
 # CaseIntel
 
 **AI-Powered Cybercrime Complaint Intelligence, Case Correlation & Investigation Assistance System**
+CaseIntel is a cybersecurity application designed to assist in the analysis of cybercrime complaints by combining **PII protection, machine-learning-based complaint classification, cybercrime indicator extraction, and case correlation**.
 
-Project Exhibition I · Int. M.Tech Cyber Security · School of Computing Science Engineering and Artificial Intelligence (SCAI), VIT Bhopal · Fall 2026
+The system converts unstructured complaint data into structured and privacy-protected information that can help investigators identify related complaints and prioritize potentially connected cases.
 
 ## Overview
 
@@ -17,60 +18,80 @@ CaseIntel is a prototype system that helps cybercrime investigators by automatic
 ## Architecture
 
 ```
-Complaint Input → PII Protection → AI Classification
-                                 → Indicator Extraction → Case Correlation → Investigation Dashboard
+Complaint Input → PII Protection → AI Classification → Indicator Extraction → Case Correlation → Investigation Dashboard
 ```
 
 See `frontend/caseintel_system_architecture.svg` and `frontend/caseintel_data_flow.svg` for diagrams.
 
 ## Project structure
-
-```
-data/           Dataset generation, merging, and module outputs
-modules/
-  privacy/      Module 1 — PII detection & redaction
-  classification/  Module 2 — Crime-type classification
-  extraction/   Module 3 — Indicator extraction
-  correlation/  Module 4 — Case correlation & clustering
-frontend/       Module 5 — Investigation dashboard + diagrams
-api/            (planned) REST API layer
-```
+CaseIntel/
+│
+├── README.md
+├── .gitignore
+├── Data/
+│   ├── generate_dataset.py
+│   ├── complaints_dataset.csv
+│   ├── complaints_dataset.json
+│   ├── real_india_sms_raw.csv
+│   ├── merge_datasets.py
+│   ├── combined_dataset.csv
+│   ├── pii_protected_complaints.json
+│   ├── extracted_indicators.json
+│   ├── case_clusters.json
+│   ├── dashboard_data.json
+│   ├── references.md
+│   ├── github_push_order.md
+│   │
+│   └── models/
+│       ├── classifier.joblib
+│       └── vectorizer.joblib
+│
+├── modules/
+│   ├── privacy/
+│   │   └── pii_protection.py
+│   │
+│   ├── classification/
+│   │   └── classify.py
+│   │
+│   ├── extraction/
+│   │   └── extract_indicators.py
+│   │
+│   └── correlation/
+│       └── correlate.py
+│
+├── Frontend/
+│   ├── dashboard.html
+│   ├── dashboard_template.html
+│   ├── caseintel_data_flow.svg
+│   └── caseintel_system_architecture.svg
+│
+├── Results/
+    ├── classification_report.txt
+    └── confusion_matrix.png
 
 ## Setup
-
 ```bash
 pip install scikit-learn pandas joblib
 ```
 
 ## Running the pipeline
-
-```bash
-# 1. Generate the synthetic dataset
-cd data && python3 generate_dataset.py
-
-# 2. Merge with real fraud SMS dataset
-python3 merge_datasets.py
-
-# 3. Run each module (from its own folder)
-cd ../modules/privacy && python3 pii_protection.py
-cd ../classification && python3 classify.py
-cd ../extraction && python3 extract_indicators.py
-cd ../correlation && python3 correlate.py
-
-# 4. Open the dashboard
-# frontend/dashboard.html — open directly in a browser, no server needed
-```
+Complaint
+    ↓
+PII Redaction
+    ↓
+TF-IDF Vectorization
+    ↓
+Logistic Regression
+    ↓
+Crime Category
 
 ## Dataset
-
 - 400 synthetic cybercrime complaints (5 crime types), generated with deliberately shared scammer indicators to simulate real fraud campaigns
 - Merged with a real public India-specific SMS fraud dataset for authentic scam-language grounding
 - Every row is tagged `source: synthetic` or `source: real` in `combined_dataset.csv`
 
 ## Results (current prototype)
-
 | Metric | Value |
-|---|---|
 | Total complaints processed | 427 |
 | Classification test accuracy | 95% |
 | PII instances redacted | 511 |
@@ -78,19 +99,12 @@ cd ../correlation && python3 correlate.py
 | Correlated case clusters found | 10 |
 
 ## Team
-
 | Module | Owner |
-|---|---|
-| PII Protection | *(name)* |
-| AI Classification | *(name)* |
-| Indicator Extraction | *(name)* |
-| Case Correlation | *(name)* |
-| Dashboard & Visualization | *(name)* |
+| PII Protection | *Palak* |
+| AI Classification | *Rishabh* |
+| Indicator Extraction | *Nancy* |
+| Case Correlation | *Shreyansh* |
+| Dashboard & Visualization | *Vishnu* |
 
 ## References
-
 See `data/references.md`.
-
-## Status
-
-Prototype built for Review-2 (Project Exhibition I). Next steps: transformer-based classification, FastAPI backend with persistence, expanded real dataset coverage — see `data/review2_slide_content.md` for the full roadmap.
