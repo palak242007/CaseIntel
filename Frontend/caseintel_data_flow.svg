@@ -1,4 +1,4 @@
-```xml
+<?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg"
      width="1400"
      height="900"
@@ -522,5 +522,6 @@
         fill="#64748b">
     CaseIntel • AI-assisted cybercrime investigation support • Human verification required
   </text>
+
 
 </svg>
