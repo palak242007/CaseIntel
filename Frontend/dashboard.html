@@ -1,0 +1,2860 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+```
+<title>CaseIntel — Investigation Dashboard</title>
+
+<style>
+    :root {
+        --bg: #0b1120;
+        --bg-secondary: #111827;
+        --card: #172033;
+        --card-hover: #1d2940;
+        --border: #26344d;
+
+        --text: #f8fafc;
+        --muted: #94a3b8;
+
+        --primary: #38bdf8;
+        --primary-dark: #0284c7;
+
+        --success: #22c55e;
+        --warning: #f59e0b;
+        --danger: #ef4444;
+        --purple: #a78bfa;
+
+        --shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+        --radius: 14px;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family:
+            Inter,
+            ui-sans-serif,
+            system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+
+        background:
+            radial-gradient(
+                circle at top right,
+                rgba(14, 165, 233, 0.10),
+                transparent 30%
+            ),
+            var(--bg);
+
+        color: var(--text);
+        min-height: 100vh;
+        line-height: 1.5;
+    }
+
+    button,
+    input {
+        font: inherit;
+    }
+
+    button {
+        cursor: pointer;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+
+        background: rgba(11, 17, 32, 0.92);
+        backdrop-filter: blur(14px);
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .header-inner {
+        max-width: 1400px;
+        margin: auto;
+        padding: 18px 24px;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+    }
+
+    .brand {
+        display: flex;
+        align-items: center;
+        gap: 13px;
+    }
+
+    .brand-icon {
+        width: 44px;
+        height: 44px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 12px;
+
+        background:
+            linear-gradient(
+                135deg,
+                var(--primary-dark),
+                #7c3aed
+            );
+
+        font-size: 22px;
+        box-shadow: 0 8px 25px rgba(14, 165, 233, 0.25);
+    }
+
+    .brand h1 {
+        font-size: 21px;
+        letter-spacing: -0.5px;
+    }
+
+    .brand p {
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    .system-status {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        padding: 8px 13px;
+
+        border: 1px solid rgba(34, 197, 94, 0.25);
+        border-radius: 999px;
+
+        background: rgba(34, 197, 94, 0.08);
+
+        color: #86efac;
+        font-size: 13px;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--success);
+        border-radius: 50%;
+        box-shadow: 0 0 10px rgba(34, 197, 94, 0.8);
+    }
+
+    /* =========================
+       LAYOUT
+    ========================== */
+
+    .container {
+        width: min(1400px, calc(100% - 40px));
+        margin: 0 auto;
+        padding: 30px 0 60px;
+    }
+
+    .page-heading {
+        margin-bottom: 25px;
+    }
+
+    .page-heading h2 {
+        font-size: 28px;
+        letter-spacing: -0.7px;
+    }
+
+    .page-heading p {
+        margin-top: 5px;
+        color: var(--muted);
+        font-size: 14px;
+    }
+
+    /* =========================
+       STATS
+    ========================== */
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .stat-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+
+        box-shadow: var(--shadow);
+
+        transition:
+            transform 0.2s ease,
+            border-color 0.2s ease;
+    }
+
+    .stat-card:hover {
+        transform: translateY(-2px);
+        border-color: #355071;
+    }
+
+    .stat-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .stat-label {
+        color: var(--muted);
+        font-size: 13px;
+    }
+
+    .stat-icon {
+        width: 36px;
+        height: 36px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 10px;
+        background: rgba(56, 189, 248, 0.10);
+
+        font-size: 17px;
+    }
+
+    .stat-value {
+        margin-top: 12px;
+        font-size: 28px;
+        font-weight: 700;
+    }
+
+    .stat-description {
+        margin-top: 4px;
+        color: var(--muted);
+        font-size: 12px;
+    }
+
+    /* =========================
+       SEARCH
+    ========================== */
+
+    .search-panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+        padding: 20px;
+        margin-bottom: 24px;
+
+        box-shadow: var(--shadow);
+    }
+
+    .section-title {
+        font-size: 17px;
+        font-weight: 650;
+        margin-bottom: 15px;
+    }
+
+    .search-row {
+        display: flex;
+        gap: 10px;
+    }
+
+    .search-input {
+        flex: 1;
+
+        padding: 12px 14px;
+
+        background: #0f172a;
+        color: var(--text);
+
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        outline: none;
+    }
+
+    .search-input:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.10);
+    }
+
+    .btn {
+        border: 0;
+        border-radius: 10px;
+
+        padding: 11px 18px;
+
+        font-weight: 600;
+
+        transition:
+            background 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    .btn-primary {
+        color: white;
+        background: var(--primary-dark);
+    }
+
+    .btn-primary:hover {
+        background: #0369a1;
+        transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+        color: var(--text);
+        background: #243149;
+        border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+        background: #2d3c58;
+    }
+
+    /* =========================
+       MAIN GRID
+    ========================== */
+
+    .main-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+
+    .panel {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+
+        padding: 20px;
+
+        box-shadow: var(--shadow);
+    }
+
+    .panel + .panel {
+        margin-top: 20px;
+    }
+
+    /* =========================
+       CASE DETAILS
+    ========================== */
+
+    .case-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 15px;
+
+        padding-bottom: 18px;
+        margin-bottom: 18px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .case-id {
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    .case-category {
+        display: inline-block;
+
+        margin-top: 6px;
+
+        color: #bae6fd;
+        background: rgba(56, 189, 248, 0.10);
+
+        border: 1px solid rgba(56, 189, 248, 0.20);
+
+        padding: 5px 10px;
+        border-radius: 999px;
+
+        font-size: 12px;
+    }
+
+    .priority {
+        padding: 6px 11px;
+        border-radius: 999px;
+
+        font-size: 11px;
+        font-weight: 700;
+
+        text-transform: uppercase;
+        letter-spacing: 0.4px;
+    }
+
+    .priority-high {
+        color: #fecaca;
+        background: rgba(239, 68, 68, 0.13);
+        border: 1px solid rgba(239, 68, 68, 0.25);
+    }
+
+    .priority-medium {
+        color: #fde68a;
+        background: rgba(245, 158, 11, 0.13);
+        border: 1px solid rgba(245, 158, 11, 0.25);
+    }
+
+    .priority-low {
+        color: #bbf7d0;
+        background: rgba(34, 197, 94, 0.13);
+        border: 1px solid rgba(34, 197, 94, 0.25);
+    }
+
+    .summary-box {
+        padding: 15px;
+
+        background: #101827;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+
+        color: #dbeafe;
+        font-size: 14px;
+
+        margin-bottom: 20px;
+    }
+
+    /* =========================
+       CLASSIFICATION
+    ========================== */
+
+    .classification {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 22px;
+    }
+
+    .classification-box {
+        padding: 15px;
+
+        background: #101827;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+
+    .label {
+        color: var(--muted);
+        font-size: 11px;
+
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    .classification-value {
+        margin-top: 5px;
+        font-size: 17px;
+        font-weight: 650;
+    }
+
+    .confidence-bar {
+        height: 7px;
+        margin-top: 9px;
+
+        background: #263247;
+        border-radius: 99px;
+        overflow: hidden;
+    }
+
+    .confidence-fill {
+        height: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--primary-dark),
+                var(--primary)
+            );
+
+        border-radius: 99px;
+    }
+
+    /* =========================
+       INDICATORS
+    ========================== */
+
+    .indicator-section {
+        margin-top: 10px;
+    }
+
+    .indicator-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .indicator-card {
+        min-height: 100px;
+
+        padding: 14px;
+
+        background: #101827;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+
+    .indicator-heading {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        font-size: 13px;
+        font-weight: 600;
+    }
+
+    .indicator-count {
+        margin-left: auto;
+
+        min-width: 23px;
+        height: 23px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 50%;
+
+        background: #243149;
+        color: #cbd5e1;
+
+        font-size: 11px;
+    }
+
+    .indicator-values {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+
+        margin-top: 11px;
+    }
+
+    .indicator-value {
+        padding: 5px 8px;
+
+        border-radius: 6px;
+
+        background: #182338;
+        border: 1px solid #293957;
+
+        color: #cbd5e1;
+
+        font-family: monospace;
+        font-size: 11px;
+
+        word-break: break-all;
+    }
+
+    .empty-value {
+        color: #64748b;
+        font-size: 12px;
+    }
+
+    /* =========================
+       RELATED CASES
+    ========================== */
+
+    .related-case {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        gap: 12px;
+
+        padding: 13px 0;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .related-case:last-child {
+        border-bottom: 0;
+    }
+
+    .related-id {
+        font-weight: 650;
+        font-size: 14px;
+    }
+
+    .shared-indicators {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 5px;
+        margin-top: 5px;
+    }
+
+    .mini-tag {
+        color: #bae6fd;
+        background: rgba(56, 189, 248, 0.08);
+        border: 1px solid rgba(56, 189, 248, 0.15);
+
+        padding: 3px 6px;
+        border-radius: 5px;
+
+        font-size: 10px;
+    }
+
+    .similarity {
+        text-align: right;
+        white-space: nowrap;
+    }
+
+    .similarity strong {
+        color: var(--primary);
+        font-size: 15px;
+    }
+
+    .similarity span {
+        display: block;
+        color: var(--muted);
+        font-size: 10px;
+    }
+
+    /* =========================
+       INVESTIGATION LEAD
+    ========================== */
+
+    .lead-box {
+        padding: 16px;
+
+        border-radius: 11px;
+
+        background:
+            linear-gradient(
+                135deg,
+                rgba(124, 58, 237, 0.10),
+                rgba(56, 189, 248, 0.06)
+            );
+
+        border: 1px solid rgba(167, 139, 250, 0.20);
+    }
+
+    .lead-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+    }
+
+    .lead-title {
+        font-weight: 650;
+    }
+
+    .lead-message {
+        margin-top: 10px;
+        color: #cbd5e1;
+        font-size: 13px;
+    }
+
+    .lead-warning {
+        margin-top: 13px;
+        padding: 9px;
+
+        border-radius: 7px;
+
+        background: rgba(245, 158, 11, 0.08);
+        border: 1px solid rgba(245, 158, 11, 0.15);
+
+        color: #fcd34d;
+        font-size: 11px;
+    }
+
+    /* =========================
+       CATEGORY CHART
+    ========================== */
+
+    .category-row {
+        margin-bottom: 15px;
+    }
+
+    .category-header {
+        display: flex;
+        justify-content: space-between;
+
+        margin-bottom: 6px;
+
+        font-size: 12px;
+    }
+
+    .category-count {
+        color: var(--muted);
+    }
+
+    .category-bar {
+        height: 8px;
+
+        background: #253149;
+        border-radius: 99px;
+        overflow: hidden;
+    }
+
+    .category-fill {
+        height: 100%;
+
+        background:
+            linear-gradient(
+                90deg,
+                var(--primary-dark),
+                var(--purple)
+            );
+
+        border-radius: 99px;
+    }
+
+    /* =========================
+       SYSTEM MODULES
+    ========================== */
+
+    .module {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        padding: 10px 0;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .module:last-child {
+        border-bottom: 0;
+    }
+
+    .module-status {
+        width: 8px;
+        height: 8px;
+
+        border-radius: 50%;
+        background: var(--success);
+    }
+
+    .module-info {
+        flex: 1;
+    }
+
+    .module-name {
+        font-size: 13px;
+    }
+
+    .module-owner {
+        color: var(--muted);
+        font-size: 10px;
+        margin-top: 1px;
+    }
+
+    .module-state {
+        color: #86efac;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    /* =========================
+       CASE TABLE
+    ========================== */
+
+    .case-table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    .case-table th {
+        color: var(--muted);
+        font-size: 11px;
+        text-align: left;
+
+        padding: 11px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .case-table td {
+        padding: 12px 11px;
+
+        border-bottom: 1px solid rgba(38, 52, 77, 0.7);
+
+        font-size: 12px;
+    }
+
+    .case-table tr {
+        transition: background 0.15s ease;
+    }
+
+    .case-table tbody tr:hover {
+        background: var(--card-hover);
+    }
+
+    .case-link {
+        color: var(--primary);
+        font-weight: 650;
+        cursor: pointer;
+    }
+
+    /* =========================
+       EMPTY / ERROR
+    ========================== */
+
+    .empty-state {
+        padding: 30px 15px;
+
+        color: var(--muted);
+        text-align: center;
+        font-size: 13px;
+    }
+
+    .error-box {
+        display: none;
+
+        margin-bottom: 20px;
+        padding: 13px 15px;
+
+        color: #fecaca;
+
+        background: rgba(239, 68, 68, 0.08);
+        border: 1px solid rgba(239, 68, 68, 0.20);
+
+        border-radius: 10px;
+
+        font-size: 13px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+        max-width: 1400px;
+        margin: auto;
+
+        padding: 20px 24px 30px;
+
+        color: #64748b;
+        text-align: center;
+
+        font-size: 11px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1050px) {
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .main-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .container {
+            width: min(100% - 24px, 1400px);
+            padding-top: 20px;
+        }
+
+        .header-inner {
+            padding: 14px 12px;
+        }
+
+        .brand p {
+            display: none;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .search-row {
+            flex-direction: column;
+        }
+
+        .classification,
+        .indicator-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .case-header {
+            flex-direction: column;
+        }
+
+        .case-table-wrapper {
+            overflow-x: auto;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body>
+
+<header>
+    <div class="header-inner">
+
+```
+    <div class="brand">
+        <div class="brand-icon">🔎</div>
+
+        <div>
+            <h1>CaseIntel</h1>
+            <p>AI-Assisted Cybercrime Complaint Analysis</p>
+        </div>
+    </div>
+
+    <div class="system-status">
+        <span class="status-dot"></span>
+        <span id="headerStatus">System Operational</span>
+    </div>
+
+</div>
+```
+
+</header>
+
+<main class="container">
+
+```
+<section class="page-heading">
+    <h2>Investigation Dashboard</h2>
+    <p>
+        Unified view of complaint classification, indicators,
+        case relationships and investigation leads.
+    </p>
+</section>
+
+
+<!-- ERROR MESSAGE -->
+
+<div class="error-box" id="errorBox"></div>
+
+
+<!-- OVERVIEW -->
+
+<section class="stats-grid">
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Total Cases</span>
+            <span class="stat-icon">📁</span>
+        </div>
+
+        <div class="stat-value" id="totalCases">0</div>
+
+        <div class="stat-description">
+            Complaints available for analysis
+        </div>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Categories</span>
+            <span class="stat-icon">🏷️</span>
+        </div>
+
+        <div class="stat-value" id="totalCategories">0</div>
+
+        <div class="stat-description">
+            Crime categories identified
+        </div>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Relationships</span>
+            <span class="stat-icon">🔗</span>
+        </div>
+
+        <div class="stat-value" id="totalRelationships">0</div>
+
+        <div class="stat-description">
+            Potential cross-case relationships
+        </div>
+    </div>
+
+
+    <div class="stat-card">
+        <div class="stat-top">
+            <span class="stat-label">Investigation Leads</span>
+            <span class="stat-icon">🚨</span>
+        </div>
+
+        <div class="stat-value" id="totalLeads">0</div>
+
+        <div class="stat-description">
+            Leads requiring human review
+        </div>
+    </div>
+
+</section>
+
+
+<!-- SEARCH -->
+
+<section class="search-panel">
+
+    <div class="section-title">
+        🔍 Search Case
+    </div>
+
+    <div class="search-row">
+
+        <input
+            type="text"
+            id="caseSearch"
+            class="search-input"
+            placeholder="Enter Case ID, e.g. C001"
+            autocomplete="off"
+        >
+
+        <button
+            class="btn btn-primary"
+            onclick="searchCase()"
+        >
+            Search
+        </button>
+
+        <button
+            class="btn btn-secondary"
+            onclick="showFirstCase()"
+        >
+            Show Sample
+        </button>
+
+    </div>
+
+</section>
+
+
+<section class="main-grid">
+
+    <!-- =========================
+         LEFT COLUMN
+    ========================== -->
+
+    <div>
+
+        <!-- SELECTED CASE -->
+
+        <section class="panel" id="casePanel">
+
+            <div class="case-header">
+
+                <div>
+                    <div class="case-id" id="caseId">
+                        Select a Case
+                    </div>
+
+                    <span
+                        class="case-category"
+                        id="caseCategory"
+                    >
+                        —
+                    </span>
+                </div>
+
+                <div
+                    class="priority priority-low"
+                    id="casePriority"
+                >
+                    —
+                </div>
+
+            </div>
+
+
+            <div
+                class="summary-box"
+                id="caseSummary"
+            >
+                Search for a case to view its analysis.
+            </div>
+
+
+            <!-- CLASSIFICATION -->
+
+            <div class="section-title">
+                🤖 AI Classification
+            </div>
+
+            <div class="classification">
+
+                <div class="classification-box">
+
+                    <div class="label">
+                        Predicted Category
+                    </div>
+
+                    <div
+                        class="classification-value"
+                        id="predictedCategory"
+                    >
+                        —
+                    </div>
+
+                </div>
+
+
+                <div class="classification-box">
+
+                    <div class="label">
+                        Model Confidence / Score
+                    </div>
+
+                    <div
+                        class="classification-value"
+                        id="confidenceValue"
+                    >
+                        —
+                    </div>
+
+                    <div class="confidence-bar">
+                        <div
+                            class="confidence-fill"
+                            id="confidenceFill"
+                            style="width: 0%"
+                        ></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- INDICATORS -->
+
+            <div class="indicator-section">
+
+                <div class="section-title">
+                    🧩 Extracted Indicators
+                </div>
+
+                <div
+                    class="indicator-grid"
+                    id="indicatorGrid"
+                >
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RELATED CASES -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                🔗 Potentially Related Cases
+            </div>
+
+            <div id="relatedCases">
+                <div class="empty-state">
+                    No case selected.
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INVESTIGATION LEAD -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                🚨 Investigation Lead
+            </div>
+
+            <div id="investigationLead">
+                <div class="empty-state">
+                    Select a case to view investigation leads.
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- ALL CASES -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                📋 All Cases
+            </div>
+
+            <div class="case-table-wrapper">
+
+                <table class="case-table">
+
+                    <thead>
+                        <tr>
+                            <th>Case ID</th>
+                            <th>Category</th>
+                            <th>Confidence</th>
+                            <th>Relationships</th>
+                            <th>Priority</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="caseTableBody">
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =========================
+         RIGHT COLUMN
+    ========================== -->
+
+    <aside>
+
+        <!-- CATEGORY DISTRIBUTION -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                📊 Category Distribution
+            </div>
+
+            <div id="categoryChart">
+                <div class="empty-state">
+                    Loading categories...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- INDICATOR SUMMARY -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                🧩 Indicator Summary
+            </div>
+
+            <div id="indicatorSummary">
+                <div class="empty-state">
+                    Loading indicators...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- SYSTEM MODULES -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                ⚙️ System Modules
+            </div>
+
+            <div id="systemModules">
+                <div class="empty-state">
+                    Loading system status...
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- DISCLAIMER -->
+
+        <section class="panel">
+
+            <div class="section-title">
+                ⚠️ Responsible Use
+            </div>
+
+            <p style="
+                color: #94a3b8;
+                font-size: 12px;
+                line-height: 1.7;
+            ">
+                CaseIntel provides AI-assisted analytical signals.
+                Similarity scores, classifications and shared
+                indicators do not establish guilt or prove that
+                two cases are connected.
+            </p>
+
+            <p style="
+                color: #fbbf24;
+                font-size: 11px;
+                margin-top: 12px;
+            ">
+                Final investigation decisions require human
+                verification.
+            </p>
+
+        </section>
+
+    </aside>
+
+</section>
+```
+
+</main>
+
+<footer>
+    CaseIntel &copy; 2026 — AI-Assisted Cybercrime Complaint Analysis
+    <br>
+    Prototype / Academic Project
+</footer>
+
+<script>
+
+    /*
+     * ==========================================================
+     * CASEINTEL DASHBOARD
+     * ==========================================================
+     *
+     * Primary data source:
+     *
+     *     ../data/dashboard_data.json
+     *
+     * Expected structure:
+     *
+     * {
+     *   "dashboard": {...},
+     *   "categories": [...],
+     *   "cases": [...],
+     *   "correlations": [...],
+     *   "investigation_leads": [...],
+     *   "indicator_summary": {...},
+     *   "system_status": {...}
+     * }
+     *
+     * If dashboard_data.json cannot be loaded, the dashboard
+     * automatically uses a small embedded demo dataset.
+     *
+     * ==========================================================
+     */
+
+
+    let dashboardData = null;
+
+
+    /* ==========================================================
+       DEMO FALLBACK DATA
+    ========================================================== */
+
+    const fallbackData = {
+
+        project: {
+            name: "CaseIntel",
+            version: "1.0.0"
+        },
+
+        dashboard: {
+            last_updated: "2026-09-13T22:30:00+05:30",
+            status: "operational",
+            total_cases: 10,
+            total_categories: 5,
+            potential_relationships: 4,
+            investigation_leads: 6
+        },
+
+        categories: [
+            {
+                name: "Phishing",
+                case_count: 3
+            },
+            {
+                name: "Online Fraud",
+                case_count: 3
+            },
+            {
+                name: "UPI Fraud",
+                case_count: 2
+            },
+            {
+                name: "Account Compromise",
+                case_count: 1
+            },
+            {
+                name: "Identity Theft",
+                case_count: 1
+            }
+        ],
+
+        cases: [
+            {
+                case_id: "C001",
+                category: "Phishing",
+
+                classification: {
+                    predicted_category: "Phishing",
+                    confidence: 0.94
+                },
+
+                complaint_summary:
+                    "Victim received a fraudulent message containing a suspicious website link and was asked to provide account information.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX4321"
+                    ],
+                    email_addresses: [],
+                    urls: [
+                        "https://example-phishing.test/login"
+                    ],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C004",
+                        similarity_score: 0.87,
+                        shared_indicators: [
+                            "phone_number",
+                            "url"
+                        ]
+                    },
+                    {
+                        case_id: "C007",
+                        similarity_score: 0.79,
+                        shared_indicators: [
+                            "phone_number"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "high",
+                    message:
+                        "Potential connection with multiple phishing complaints through shared indicators."
+                }
+            },
+
+            {
+                case_id: "C002",
+                category: "UPI Fraud",
+
+                classification: {
+                    predicted_category: "UPI Fraud",
+                    confidence: 0.91
+                },
+
+                complaint_summary:
+                    "Victim was contacted by an unknown person and persuaded to make a UPI transaction.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX7812"
+                    ],
+                    email_addresses: [],
+                    urls: [],
+                    upi_ids: [
+                        "demo@upi"
+                    ],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C006",
+                        similarity_score: 0.83,
+                        shared_indicators: [
+                            "phone_number",
+                            "upi_id"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "high",
+                    message:
+                        "Shared UPI identifier detected with another complaint."
+                }
+            },
+
+            {
+                case_id: "C003",
+                category: "Online Fraud",
+
+                classification: {
+                    predicted_category: "Online Fraud",
+                    confidence: 0.89
+                },
+
+                complaint_summary:
+                    "Victim was contacted regarding a fraudulent online service and was asked to transfer money.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX2468"
+                    ],
+                    email_addresses: [
+                        "support@example.test"
+                    ],
+                    urls: [],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C008",
+                        similarity_score: 0.76,
+                        shared_indicators: [
+                            "email_address"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "medium",
+                    message:
+                        "Potential relationship identified through a shared contact email."
+                }
+            },
+
+            {
+                case_id: "C004",
+                category: "Phishing",
+
+                classification: {
+                    predicted_category: "Phishing",
+                    confidence: 0.92
+                },
+
+                complaint_summary:
+                    "A suspicious message directed the victim to a fraudulent login page.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX4321"
+                    ],
+                    email_addresses: [],
+                    urls: [
+                        "https://example-phishing.test/login"
+                    ],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C001",
+                        similarity_score: 0.87,
+                        shared_indicators: [
+                            "phone_number",
+                            "url"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "high",
+                    message:
+                        "Same phone number and URL detected in another phishing complaint."
+                }
+            },
+
+            {
+                case_id: "C005",
+                category: "Account Compromise",
+
+                classification: {
+                    predicted_category: "Account Compromise",
+                    confidence: 0.88
+                },
+
+                complaint_summary:
+                    "Victim reported unauthorized access to an online account after interacting with a suspicious message.",
+
+                indicators: {
+                    phone_numbers: [],
+                    email_addresses: [
+                        "security@example.test"
+                    ],
+                    urls: [
+                        "https://example-login.test/verify"
+                    ],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [],
+
+                investigation_lead: {
+                    status: "no_strong_relationship",
+                    priority: "low",
+                    message:
+                        "No strong cross-case indicator match detected."
+                }
+            },
+
+            {
+                case_id: "C006",
+                category: "UPI Fraud",
+
+                classification: {
+                    predicted_category: "UPI Fraud",
+                    confidence: 0.93
+                },
+
+                complaint_summary:
+                    "Victim was instructed to transfer money through a UPI identifier provided by an unknown individual.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX7812"
+                    ],
+                    email_addresses: [],
+                    urls: [],
+                    upi_ids: [
+                        "demo@upi"
+                    ],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C002",
+                        similarity_score: 0.83,
+                        shared_indicators: [
+                            "phone_number",
+                            "upi_id"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "high",
+                    message:
+                        "Shared phone number and UPI identifier detected with another case."
+                }
+            },
+
+            {
+                case_id: "C007",
+                category: "Phishing",
+
+                classification: {
+                    predicted_category: "Phishing",
+                    confidence: 0.90
+                },
+
+                complaint_summary:
+                    "Victim received a suspicious communication requesting account verification through an online link.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX4321"
+                    ],
+                    email_addresses: [],
+                    urls: [],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C001",
+                        similarity_score: 0.79,
+                        shared_indicators: [
+                            "phone_number"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "medium",
+                    message:
+                        "Phone number overlaps with another phishing complaint."
+                }
+            },
+
+            {
+                case_id: "C008",
+                category: "Online Fraud",
+
+                classification: {
+                    predicted_category: "Online Fraud",
+                    confidence: 0.86
+                },
+
+                complaint_summary:
+                    "Victim received fraudulent customer-support communication requesting personal and payment information.",
+
+                indicators: {
+                    phone_numbers: [],
+                    email_addresses: [
+                        "support@example.test"
+                    ],
+                    urls: [],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [
+                    {
+                        case_id: "C003",
+                        similarity_score: 0.76,
+                        shared_indicators: [
+                            "email_address"
+                        ]
+                    }
+                ],
+
+                investigation_lead: {
+                    status: "potential_relationship",
+                    priority: "medium",
+                    message:
+                        "Shared email address detected with another online fraud complaint."
+                }
+            },
+
+            {
+                case_id: "C009",
+                category: "Identity Theft",
+
+                classification: {
+                    predicted_category: "Identity Theft",
+                    confidence: 0.84
+                },
+
+                complaint_summary:
+                    "Victim reported suspected misuse of personal information to create or access an unauthorized service.",
+
+                indicators: {
+                    phone_numbers: [],
+                    email_addresses: [
+                        "identity@example.test"
+                    ],
+                    urls: [],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [],
+
+                investigation_lead: {
+                    status: "no_strong_relationship",
+                    priority: "low",
+                    message:
+                        "No strong cross-case indicator match detected."
+                }
+            },
+
+            {
+                case_id: "C010",
+                category: "Online Fraud",
+
+                classification: {
+                    predicted_category: "Online Fraud",
+                    confidence: 0.87
+                },
+
+                complaint_summary:
+                    "Victim reported a fraudulent online transaction following communication from an unknown party.",
+
+                indicators: {
+                    phone_numbers: [
+                        "XXXXXX1357"
+                    ],
+                    email_addresses: [],
+                    urls: [],
+                    upi_ids: [],
+                    account_numbers: []
+                },
+
+                related_cases: [],
+
+                investigation_lead: {
+                    status: "no_strong_relationship",
+                    priority: "low",
+                    message:
+                        "No strong cross-case indicator match detected."
+                }
+            }
+        ],
+
+        indicator_summary: {
+            phone_numbers: 6,
+            email_addresses: 4,
+            urls: 3,
+            upi_ids: 2,
+            account_numbers: 0
+        },
+
+        system_status: {
+            pii_protection: {
+                status: "active",
+                module: "Member 1"
+            },
+
+            classification: {
+                status: "active",
+                module: "Member 2",
+                model: "classifier.joblib"
+            },
+
+            indicator_extraction: {
+                status: "active",
+                module: "Member 3"
+            },
+
+            case_correlation: {
+                status: "active",
+                module: "Member 4"
+            },
+
+            dashboard: {
+                status: "active",
+                module: "Member 5"
+            }
+        }
+    };
+
+
+    /* ==========================================================
+       INITIALIZATION
+    ========================================================== */
+
+    document.addEventListener("DOMContentLoaded", async () => {
+
+        await loadDashboardData();
+
+        initializeDashboard();
+
+    });
+
+
+    /* ==========================================================
+       LOAD DATA
+    ========================================================== */
+
+    async function loadDashboardData() {
+
+        try {
+
+            const response = await fetch("../data/dashboard_data.json", {
+                cache: "no-store"
+            });
+
+            if (!response.ok) {
+                throw new Error(
+                    "dashboard_data.json returned HTTP " +
+                    response.status
+                );
+            }
+
+            dashboardData = await response.json();
+
+            hideError();
+
+        } catch (error) {
+
+            console.warn(
+                "Could not load dashboard_data.json.",
+                error
+            );
+
+            dashboardData = fallbackData;
+
+            showError(
+                "Live dashboard_data.json could not be loaded. " +
+                "The dashboard is currently displaying embedded demo data."
+            );
+        }
+    }
+
+
+    /* ==========================================================
+       INITIALIZE
+    ========================================================== */
+
+    function initializeDashboard() {
+
+        if (!dashboardData) {
+            dashboardData = fallbackData;
+        }
+
+        renderOverview();
+        renderCategories();
+        renderIndicatorSummary();
+        renderSystemModules();
+        renderCaseTable();
+
+        showFirstCase();
+    }
+
+
+    /* ==========================================================
+       OVERVIEW
+    ========================================================== */
+
+    function renderOverview() {
+
+        const dashboard = dashboardData.dashboard || {};
+
+        const cases =
+            dashboardData.cases || [];
+
+        const categories =
+            dashboardData.categories || [];
+
+        const correlations =
+            dashboardData.correlations || [];
+
+        const leads =
+            dashboardData.investigation_leads || [];
+
+        document.getElementById("totalCases").textContent =
+            dashboard.total_cases ??
+            cases.length;
+
+        document.getElementById("totalCategories").textContent =
+            dashboard.total_categories ??
+            categories.length;
+
+        document.getElementById("totalRelationships").textContent =
+            dashboard.potential_relationships ??
+            correlations.length;
+
+        document.getElementById("totalLeads").textContent =
+            dashboard.investigation_leads ??
+            leads.length;
+
+        const status =
+            dashboard.status || "operational";
+
+        const headerStatus =
+            document.getElementById("headerStatus");
+
+        if (status === "operational") {
+            headerStatus.textContent =
+                "System Operational";
+        } else {
+            headerStatus.textContent =
+                capitalize(status);
+        }
+    }
+
+
+    /* ==========================================================
+       SEARCH
+    ========================================================== */
+
+    function searchCase() {
+
+        const input =
+            document.getElementById("caseSearch");
+
+        const query =
+            input.value.trim().toLowerCase();
+
+        if (!query) {
+
+            showError(
+                "Please enter a Case ID, such as C001."
+            );
+
+            return;
+        }
+
+        const cases =
+            dashboardData.cases || [];
+
+        const exactMatch =
+            cases.find(
+                item =>
+                    String(item.case_id).toLowerCase() === query
+            );
+
+        if (exactMatch) {
+
+            renderCase(exactMatch);
+
+            hideError();
+
+            document
+                .getElementById("casePanel")
+                .scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            return;
+        }
+
+        const partialMatches =
+            cases.filter(
+                item =>
+                    String(item.case_id)
+                        .toLowerCase()
+                        .includes(query)
+            );
+
+        if (partialMatches.length > 0) {
+
+            renderCase(partialMatches[0]);
+
+            hideError();
+
+            return;
+        }
+
+        showError(
+            "No case found for: " + input.value
+        );
+    }
+
+
+    function showFirstCase() {
+
+        const cases =
+            dashboardData.cases || [];
+
+        if (!cases.length) {
+            showError("No cases are available.");
+            return;
+        }
+
+        renderCase(cases[0]);
+
+        document.getElementById("caseSearch").value =
+            cases[0].case_id;
+
+        hideError();
+    }
+
+
+    /* ==========================================================
+       RENDER CASE
+    ========================================================== */
+
+    function renderCase(caseData) {
+
+        if (!caseData) {
+            return;
+        }
+
+        document.getElementById("caseId").textContent =
+            caseData.case_id || "Unknown";
+
+        document.getElementById("caseCategory").textContent =
+            caseData.category || "Unclassified";
+
+        document.getElementById("caseSummary").textContent =
+            caseData.complaint_summary ||
+            "No complaint summary available.";
+
+        const classification =
+            caseData.classification || {};
+
+        document.getElementById("predictedCategory").textContent =
+            classification.predicted_category ||
+            caseData.category ||
+            "Unknown";
+
+        const confidence =
+            Number(classification.confidence);
+
+        const confidenceElement =
+            document.getElementById("confidenceValue");
+
+        const confidenceFill =
+            document.getElementById("confidenceFill");
+
+        if (Number.isFinite(confidence)) {
+
+            const percentage =
+                Math.max(
+                    0,
+                    Math.min(100, confidence * 100)
+                );
+
+            confidenceElement.textContent =
+                percentage.toFixed(1) + "%";
+
+            confidenceFill.style.width =
+                percentage + "%";
+
+        } else {
+
+            confidenceElement.textContent =
+                "Not available";
+
+            confidenceFill.style.width =
+                "0%";
+        }
+
+        renderPriority(caseData);
+        renderIndicators(caseData.indicators);
+        renderRelatedCases(caseData.related_cases);
+        renderInvestigationLead(caseData.investigation_lead);
+    }
+
+
+    /* ==========================================================
+       PRIORITY
+    ========================================================== */
+
+    function renderPriority(caseData) {
+
+        const element =
+            document.getElementById("casePriority");
+
+        const priority =
+            caseData.investigation_lead?.priority ||
+            "low";
+
+        element.textContent =
+            priority;
+
+        element.className =
+            "priority priority-" +
+            priority.toLowerCase();
+    }
+
+
+    /* ==========================================================
+       INDICATORS
+    ========================================================== */
+
+    function renderIndicators(indicators = {}) {
+
+        const container =
+            document.getElementById("indicatorGrid");
+
+        container.innerHTML = "";
+
+        const indicatorTypes = [
+
+            {
+                key: "phone_numbers",
+                label: "📱 Phone Numbers"
+            },
+
+            {
+                key: "email_addresses",
+                label: "📧 Email Addresses"
+            },
+
+            {
+                key: "urls",
+                label: "🔗 URLs"
+            },
+
+            {
+                key: "upi_ids",
+                label: "💳 UPI Identifiers"
+            },
+
+            {
+                key: "account_numbers",
+                label: "🏦 Account Numbers"
+            }
+        ];
+
+
+        indicatorTypes.forEach(type => {
+
+            const values =
+                Array.isArray(indicators[type.key])
+                    ? indicators[type.key]
+                    : [];
+
+            const card =
+                document.createElement("div");
+
+            card.className =
+                "indicator-card";
+
+            let valuesHTML = "";
+
+            if (values.length === 0) {
+
+                valuesHTML =
+                    '<span class="empty-value">' +
+                    "No indicators detected" +
+                    "</span>";
+
+            } else {
+
+                valuesHTML =
+                    values
+                        .map(
+                            value =>
+                                `<span class="indicator-value">${escapeHTML(value)}</span>`
+                        )
+                        .join("");
+            }
+
+            card.innerHTML = `
+
+                <div class="indicator-heading">
+
+                    <span>
+                        ${type.label}
+                    </span>
+
+                    <span class="indicator-count">
+                        ${values.length}
+                    </span>
+
+                </div>
+
+                <div class="indicator-values">
+                    ${valuesHTML}
+                </div>
+            `;
+
+            container.appendChild(card);
+        });
+    }
+
+
+    /* ==========================================================
+       RELATED CASES
+    ========================================================== */
+
+    function renderRelatedCases(relatedCases = []) {
+
+        const container =
+            document.getElementById("relatedCases");
+
+        container.innerHTML = "";
+
+        if (!Array.isArray(relatedCases) ||
+            relatedCases.length === 0) {
+
+            container.innerHTML = `
+                <div class="empty-state">
+                    No strong cross-case relationship detected.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        relatedCases.forEach(related => {
+
+            const item =
+                document.createElement("div");
+
+            item.className =
+                "related-case";
+
+            const shared =
+                Array.isArray(related.shared_indicators)
+                    ? related.shared_indicators
+                    : [];
+
+            const tags =
+                shared
+                    .map(
+                        indicator =>
+                            `<span class="mini-tag">${escapeHTML(formatIndicatorName(indicator))}</span>`
+                    )
+                    .join("");
+
+            const score =
+                Number(related.similarity_score);
+
+            const scoreText =
+                Number.isFinite(score)
+                    ? (score * 100).toFixed(1) + "%"
+                    : "N/A";
+
+            item.innerHTML = `
+
+                <div>
+
+                    <div class="related-id">
+                        ${escapeHTML(related.case_id || "Unknown")}
+                    </div>
+
+                    <div class="shared-indicators">
+                        ${tags || '<span class="empty-value">No shared indicators</span>'}
+                    </div>
+
+                </div>
+
+                <div class="similarity">
+
+                    <strong>
+                        ${scoreText}
+                    </strong>
+
+                    <span>
+                        similarity
+                    </span>
+
+                </div>
+            `;
+
+            container.appendChild(item);
+        });
+    }
+
+
+    /* ==========================================================
+       INVESTIGATION LEAD
+    ========================================================== */
+
+    function renderInvestigationLead(lead) {
+
+        const container =
+            document.getElementById("investigationLead");
+
+        container.innerHTML = "";
+
+        if (!lead) {
+
+            container.innerHTML = `
+                <div class="empty-state">
+                    No investigation lead available.
+                </div>
+            `;
+
+            return;
+        }
+
+        const priority =
+            lead.priority || "low";
+
+        const priorityClass =
+            "priority-" +
+            String(priority).toLowerCase();
+
+        const box =
+            document.createElement("div");
+
+        box.className =
+            "lead-box";
+
+        box.innerHTML = `
+
+            <div class="lead-header">
+
+                <div class="lead-title">
+                    Potential Investigation Lead
+                </div>
+
+                <span class="priority ${priorityClass}">
+                    ${escapeHTML(priority)}
+                </span>
+
+            </div>
+
+            <div class="lead-message">
+                ${escapeHTML(
+                    lead.message ||
+                    "No additional explanation available."
+                )}
+            </div>
+
+            <div class="lead-warning">
+                ⚠ This is an analytical signal and requires
+                manual verification.
+            </div>
+
+        `;
+
+        container.appendChild(box);
+    }
+
+
+    /* ==========================================================
+       CATEGORY CHART
+    ========================================================== */
+
+    function renderCategories() {
+
+        const container =
+            document.getElementById("categoryChart");
+
+        container.innerHTML = "";
+
+        const categories =
+            dashboardData.categories || [];
+
+        if (!categories.length) {
+
+            container.innerHTML = `
+                <div class="empty-state">
+                    No category data available.
+                </div>
+            `;
+
+            return;
+        }
+
+        const max =
+            Math.max(
+                ...categories.map(
+                    item =>
+                        Number(item.case_count) || 0
+                ),
+                1
+            );
+
+
+        categories.forEach(category => {
+
+            const count =
+                Number(category.case_count) || 0;
+
+            const percentage =
+                (count / max) * 100;
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "category-row";
+
+            row.innerHTML = `
+
+                <div class="category-header">
+
+                    <span>
+                        ${escapeHTML(category.name)}
+                    </span>
+
+                    <span class="category-count">
+                        ${count} cases
+                    </span>
+
+                </div>
+
+                <div class="category-bar">
+
+                    <div
+                        class="category-fill"
+                        style="width: ${percentage}%"
+                    ></div>
+
+                </div>
+            `;
+
+            container.appendChild(row);
+        });
+    }
+
+
+    /* ==========================================================
+       INDICATOR SUMMARY
+    ========================================================== */
+
+    function renderIndicatorSummary() {
+
+        const container =
+            document.getElementById("indicatorSummary");
+
+        container.innerHTML = "";
+
+        const summary =
+            dashboardData.indicator_summary || {};
+
+        const labels = {
+
+            phone_numbers:
+                "📱 Phone Numbers",
+
+            email_addresses:
+                "📧 Email Addresses",
+
+            urls:
+                "🔗 URLs",
+
+            upi_ids:
+                "💳 UPI Identifiers",
+
+            account_numbers:
+                "🏦 Account Numbers"
+        };
+
+
+        Object.keys(labels).forEach(key => {
+
+            const row =
+                document.createElement("div");
+
+            row.className =
+                "module";
+
+            row.innerHTML = `
+
+                <div
+                    style="
+                        width: 28px;
+                        text-align: center;
+                    "
+                >
+                    ${labels[key].split(" ")[0]}
+                </div>
+
+                <div class="module-info">
+
+                    <div class="module-name">
+                        ${escapeHTML(
+                            labels[key]
+                                .substring(
+                                    labels[key].indexOf(" ") + 1
+                                )
+                        )}
+                    </div>
+
+                </div>
+
+                <strong>
+                    ${Number(summary[key]) || 0}
+                </strong>
+            `;
+
+            container.appendChild(row);
+        });
+    }
+
+
+    /* ==========================================================
+       SYSTEM MODULES
+    ========================================================== */
+
+    function renderSystemModules() {
+
+        const container =
+            document.getElementById("systemModules");
+
+        container.innerHTML = "";
+
+        const modules =
+            dashboardData.system_status || {};
+
+        Object.entries(modules).forEach(
+            ([key, module]) => {
+
+                const item =
+                    document.createElement("div");
+
+                item.className =
+                    "module";
+
+                const active =
+                    module?.status === "active";
+
+                item.innerHTML = `
+
+                    <span
+                        class="module-status"
+                        style="
+                            background:
+                                ${active
+                                    ? "var(--success)"
+                                    : "var(--danger)"};
+                        "
+                    ></span>
+
+                    <div class="module-info">
+
+                        <div class="module-name">
+                            ${escapeHTML(
+                                formatModuleName(key)
+                            )}
+                        </div>
+
+                        <div class="module-owner">
+                            ${escapeHTML(
+                                module?.module ||
+                                "System Module"
+                            )}
+
+                            ${
+                                module?.model
+                                    ? " · " +
+                                      escapeHTML(module.model)
+                                    : ""
+                            }
+                        </div>
+
+                    </div>
+
+                    <span class="module-state">
+                        ${active ? "Active" : "Inactive"}
+                    </span>
+
+                `;
+
+                container.appendChild(item);
+            }
+        );
+    }
+
+
+    /* ==========================================================
+       CASE TABLE
+    ========================================================== */
+
+    function renderCaseTable() {
+
+        const tbody =
+            document.getElementById("caseTableBody");
+
+        tbody.innerHTML = "";
+
+        const cases =
+            dashboardData.cases || [];
+
+        if (!cases.length) {
+
+            tbody.innerHTML = `
+                <tr>
+                    <td colspan="5">
+                        <div class="empty-state">
+                            No cases available.
+                        </div>
+                    </td>
+                </tr>
+            `;
+
+            return;
+        }
+
+
+        cases.forEach(caseData => {
+
+            const row =
+                document.createElement("tr");
+
+            const confidence =
+                Number(
+                    caseData.classification?.confidence
+                );
+
+            const confidenceText =
+                Number.isFinite(confidence)
+                    ? (confidence * 100).toFixed(1) + "%"
+                    : "N/A";
+
+            const relatedCount =
+                Array.isArray(caseData.related_cases)
+                    ? caseData.related_cases.length
+                    : 0;
+
+            const priority =
+                caseData.investigation_lead?.priority ||
+                "low";
+
+            row.innerHTML = `
+
+                <td>
+                    <span
+                        class="case-link"
+                        onclick="selectCase('${escapeJS(caseData.case_id)}')"
+                    >
+                        ${escapeHTML(caseData.case_id)}
+                    </span>
+                </td>
+
+                <td>
+                    ${escapeHTML(
+                        caseData.category ||
+                        "Unknown"
+                    )}
+                </td>
+
+                <td>
+                    ${confidenceText}
+                </td>
+
+                <td>
+                    ${relatedCount}
+                </td>
+
+                <td>
+                    <span
+                        class="priority priority-${escapeHTML(
+                            String(priority).toLowerCase()
+                        )}"
+                    >
+                        ${escapeHTML(priority)}
+                    </span>
+                </td>
+            `;
+
+            tbody.appendChild(row);
+        });
+    }
+
+
+    /* ==========================================================
+       SELECT CASE
+    ========================================================== */
+
+    function selectCase(caseId) {
+
+        const cases =
+            dashboardData.cases || [];
+
+        const selected =
+            cases.find(
+                item =>
+                    String(item.case_id) ===
+                    String(caseId)
+            );
+
+        if (!selected) {
+
+            showError(
+                "Case " +
+                caseId +
+                " could not be found."
+            );
+
+            return;
+        }
+
+        renderCase(selected);
+
+        document.getElementById("caseSearch").value =
+            selected.case_id;
+
+        hideError();
+
+        document
+            .getElementById("casePanel")
+            .scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+    }
+
+
+    /* ==========================================================
+       KEYBOARD SEARCH
+    ========================================================== */
+
+    document
+        .getElementById("caseSearch")
+        .addEventListener(
+            "keydown",
+            event => {
+
+                if (event.key === "Enter") {
+                    searchCase();
+                }
+
+            }
+        );
+
+
+    /* ==========================================================
+       UTILITY FUNCTIONS
+    ========================================================== */
+
+    function formatIndicatorName(name) {
+
+        return String(name)
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, letter =>
+                letter.toUpperCase()
+            );
+    }
+
+
+    function formatModuleName(name) {
+
+        return String(name)
+            .replace(/_/g, " ")
+            .replace(/\b\w/g, letter =>
+                letter.toUpperCase()
+            );
+    }
+
+
+    function capitalize(value) {
+
+        const text =
+            String(value);
+
+        return text.charAt(0).toUpperCase() +
+            text.slice(1);
+    }
+
+
+    function escapeHTML(value) {
+
+        return String(value ?? "")
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+
+    function escapeJS(value) {
+
+        return String(value ?? "")
+            .replace(/\\/g, "\\\\")
+            .replace(/'/g, "\\'")
+            .replace(/"/g, '\\"');
+    }
+
+
+    /* ==========================================================
+       ERROR HANDLING
+    ========================================================== */
+
+    function showError(message) {
+
+        const errorBox =
+            document.getElementById("errorBox");
+
+        errorBox.textContent =
+            message;
+
+        errorBox.style.display =
+            "block";
+    }
+
+
+    function hideError() {
+
+        const errorBox =
+            document.getElementById("errorBox");
+
+        errorBox.style.display =
+            "none";
+
+        errorBox.textContent =
+            "";
+    }
+
+</script>
+
+</body>
+</html>

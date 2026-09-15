@@ -1,0 +1,499 @@
+{
+  "project": {
+    "name": "CaseIntel",
+    "version": "1.0.0",
+    "description": "AI-assisted cybercrime complaint analysis and case correlation dashboard"
+  },
+  "dashboard": {
+    "last_updated": "2026-09-13T22:30:00+05:30",
+    "status": "operational",
+    "total_cases": 10,
+    "total_categories": 5,
+    "potential_relationships": 6,
+    "investigation_leads": 6
+  },
+  "categories": [
+    {
+      "name": "Phishing",
+      "case_count": 3
+    },
+    {
+      "name": "Online Fraud",
+      "case_count": 3
+    },
+    {
+      "name": "UPI Fraud",
+      "case_count": 2
+    },
+    {
+      "name": "Account Compromise",
+      "case_count": 1
+    },
+    {
+      "name": "Identity Theft",
+      "case_count": 1
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "C001",
+      "category": "Phishing",
+      "classification": {
+        "predicted_category": "Phishing",
+        "confidence": 0.94
+      },
+      "complaint_summary": "Victim received a fraudulent message containing a suspicious website link and was asked to provide account information.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX4321"
+        ],
+        "email_addresses": [],
+        "urls": [
+          "https://example-phishing.test/login"
+        ],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C004",
+          "similarity_score": 0.87,
+          "shared_indicators": [
+            "phone_number",
+            "url"
+          ]
+        },
+        {
+          "case_id": "C007",
+          "similarity_score": 0.79,
+          "shared_indicators": [
+            "phone_number"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "high",
+        "message": "Potential connection with multiple phishing complaints through shared indicators."
+      }
+    },
+    {
+      "case_id": "C002",
+      "category": "UPI Fraud",
+      "classification": {
+        "predicted_category": "UPI Fraud",
+        "confidence": 0.91
+      },
+      "complaint_summary": "Victim was contacted by an unknown person and persuaded to make a UPI transaction.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX7812"
+        ],
+        "email_addresses": [],
+        "urls": [],
+        "upi_ids": [
+          "demo@upi"
+        ],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C006",
+          "similarity_score": 0.83,
+          "shared_indicators": [
+            "phone_number",
+            "upi_id"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "high",
+        "message": "Shared UPI identifier detected with another complaint."
+      }
+    },
+    {
+      "case_id": "C003",
+      "category": "Online Fraud",
+      "classification": {
+        "predicted_category": "Online Fraud",
+        "confidence": 0.89
+      },
+      "complaint_summary": "Victim was contacted regarding a fraudulent online service and was asked to transfer money.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX2468"
+        ],
+        "email_addresses": [
+          "support@example.test"
+        ],
+        "urls": [],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C008",
+          "similarity_score": 0.76,
+          "shared_indicators": [
+            "email_address"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "medium",
+        "message": "Potential relationship identified through a shared contact email."
+      }
+    },
+    {
+      "case_id": "C004",
+      "category": "Phishing",
+      "classification": {
+        "predicted_category": "Phishing",
+        "confidence": 0.92
+      },
+      "complaint_summary": "A suspicious message directed the victim to a fraudulent login page.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX4321"
+        ],
+        "email_addresses": [],
+        "urls": [
+          "https://example-phishing.test/login"
+        ],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C001",
+          "similarity_score": 0.87,
+          "shared_indicators": [
+            "phone_number",
+            "url"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "high",
+        "message": "Same phone number and URL detected in another phishing complaint."
+      }
+    },
+    {
+      "case_id": "C005",
+      "category": "Account Compromise",
+      "classification": {
+        "predicted_category": "Account Compromise",
+        "confidence": 0.88
+      },
+      "complaint_summary": "Victim reported unauthorized access to an online account after interacting with a suspicious message.",
+      "indicators": {
+        "phone_numbers": [],
+        "email_addresses": [
+          "security@example.test"
+        ],
+        "urls": [
+          "https://example-login.test/verify"
+        ],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [],
+      "investigation_lead": {
+        "status": "no_strong_relationship",
+        "priority": "low",
+        "message": "No strong cross-case indicator match detected."
+      }
+    },
+    {
+      "case_id": "C006",
+      "category": "UPI Fraud",
+      "classification": {
+        "predicted_category": "UPI Fraud",
+        "confidence": 0.93
+      },
+      "complaint_summary": "Victim was instructed to transfer money through a UPI identifier provided by an unknown individual.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX7812"
+        ],
+        "email_addresses": [],
+        "urls": [],
+        "upi_ids": [
+          "demo@upi"
+        ],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C002",
+          "similarity_score": 0.83,
+          "shared_indicators": [
+            "phone_number",
+            "upi_id"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "high",
+        "message": "Shared phone number and UPI identifier detected with another case."
+      }
+    },
+    {
+      "case_id": "C007",
+      "category": "Phishing",
+      "classification": {
+        "predicted_category": "Phishing",
+        "confidence": 0.90
+      },
+      "complaint_summary": "Victim received a suspicious communication requesting account verification through an online link.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX4321"
+        ],
+        "email_addresses": [],
+        "urls": [],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C001",
+          "similarity_score": 0.79,
+          "shared_indicators": [
+            "phone_number"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "medium",
+        "message": "Phone number overlaps with another phishing complaint."
+      }
+    },
+    {
+      "case_id": "C008",
+      "category": "Online Fraud",
+      "classification": {
+        "predicted_category": "Online Fraud",
+        "confidence": 0.86
+      },
+      "complaint_summary": "Victim received fraudulent customer-support communication requesting personal and payment information.",
+      "indicators": {
+        "phone_numbers": [],
+        "email_addresses": [
+          "support@example.test"
+        ],
+        "urls": [],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [
+        {
+          "case_id": "C003",
+          "similarity_score": 0.76,
+          "shared_indicators": [
+            "email_address"
+          ]
+        }
+      ],
+      "investigation_lead": {
+        "status": "potential_relationship",
+        "priority": "medium",
+        "message": "Shared email address detected with another online fraud complaint."
+      }
+    },
+    {
+      "case_id": "C009",
+      "category": "Identity Theft",
+      "classification": {
+        "predicted_category": "Identity Theft",
+        "confidence": 0.84
+      },
+      "complaint_summary": "Victim reported suspected misuse of personal information to create or access an unauthorized service.",
+      "indicators": {
+        "phone_numbers": [],
+        "email_addresses": [
+          "identity@example.test"
+        ],
+        "urls": [],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [],
+      "investigation_lead": {
+        "status": "no_strong_relationship",
+        "priority": "low",
+        "message": "No strong cross-case indicator match detected."
+      }
+    },
+    {
+      "case_id": "C010",
+      "category": "Online Fraud",
+      "classification": {
+        "predicted_category": "Online Fraud",
+        "confidence": 0.87
+      },
+      "complaint_summary": "Victim reported a fraudulent online transaction following communication from an unknown party.",
+      "indicators": {
+        "phone_numbers": [
+          "XXXXXX1357"
+        ],
+        "email_addresses": [],
+        "urls": [],
+        "upi_ids": [],
+        "account_numbers": []
+      },
+      "related_cases": [],
+      "investigation_lead": {
+        "status": "no_strong_relationship",
+        "priority": "low",
+        "message": "No strong cross-case indicator match detected."
+      }
+    }
+  ],
+  "correlations": [
+    {
+      "correlation_id": "R001",
+      "case_a": "C001",
+      "case_b": "C004",
+      "similarity_score": 0.87,
+      "shared_indicators": [
+        "phone_number",
+        "url"
+      ],
+      "relationship_type": "shared_indicators",
+      "priority": "high"
+    },
+    {
+      "correlation_id": "R002",
+      "case_a": "C001",
+      "case_b": "C007",
+      "similarity_score": 0.79,
+      "shared_indicators": [
+        "phone_number"
+      ],
+      "relationship_type": "shared_indicators",
+      "priority": "medium"
+    },
+    {
+      "correlation_id": "R003",
+      "case_a": "C002",
+      "case_b": "C006",
+      "similarity_score": 0.83,
+      "shared_indicators": [
+        "phone_number",
+        "upi_id"
+      ],
+      "relationship_type": "shared_indicators",
+      "priority": "high"
+    },
+    {
+      "correlation_id": "R004",
+      "case_a": "C003",
+      "case_b": "C008",
+      "similarity_score": 0.76,
+      "shared_indicators": [
+        "email_address"
+      ],
+      "relationship_type": "shared_indicators",
+      "priority": "medium"
+    }
+  ],
+  "investigation_leads": [
+    {
+      "lead_id": "L001",
+      "case_id": "C001",
+      "priority": "high",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C004",
+        "C007"
+      ],
+      "reason": "Shared phone number and suspicious URL detected across cases."
+    },
+    {
+      "lead_id": "L002",
+      "case_id": "C002",
+      "priority": "high",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C006"
+      ],
+      "reason": "Shared phone number and UPI identifier detected."
+    },
+    {
+      "lead_id": "L003",
+      "case_id": "C003",
+      "priority": "medium",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C008"
+      ],
+      "reason": "Shared contact email detected."
+    },
+    {
+      "lead_id": "L004",
+      "case_id": "C004",
+      "priority": "high",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C001"
+      ],
+      "reason": "Same phone number and URL detected."
+    },
+    {
+      "lead_id": "L005",
+      "case_id": "C006",
+      "priority": "high",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C002"
+      ],
+      "reason": "Same phone number and UPI identifier detected."
+    },
+    {
+      "lead_id": "L006",
+      "case_id": "C008",
+      "priority": "medium",
+      "type": "cross_case_relationship",
+      "related_cases": [
+        "C003"
+      ],
+      "reason": "Shared email address detected."
+    }
+  ],
+  "indicator_summary": {
+    "phone_numbers": 6,
+    "email_addresses": 4,
+    "urls": 3,
+    "upi_ids": 2,
+    "account_numbers": 0
+  },
+  "system_status": {
+    "pii_protection": {
+      "status": "active",
+      "module": "Member 1"
+    },
+    "classification": {
+      "status": "active",
+      "module": "Member 2",
+      "model": "classifier.joblib"
+    },
+    "indicator_extraction": {
+      "status": "active",
+      "module": "Member 3"
+    },
+    "case_correlation": {
+      "status": "active",
+      "module": "Member 4"
+    },
+    "dashboard": {
+      "status": "active",
+      "module": "Member 5"
+    }
+  }
+}
